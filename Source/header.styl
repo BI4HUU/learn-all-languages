@@ -1,24 +1,52 @@
 header
+	display flex
+	justify-content space-between
 	align-items center
 	top 0
 	right 0
 	left 0
-	height 30px
-	height 9vh
-	color #fff
+	height 60px
+	// height 9vh
+	color #eee
 	z-index 1
-	opacity 0
-	background-color rgba(0, 0, 0, .8)
+	background-color rgba(11, 11, 11, .8)
 	&:hover
-		opacity 1
+		background-color rgba(0, 0, 0, .8)
 
 // .item_menu
+#options
+	display flex
+	flex-direction column
+	justify-content space-between
+	height 100%
+	width 60px
+	padding 20px 18px
+	// padding 18px 15px
 
-@media (min-width: 1200px)
-	nav
-		order 0
+.options:hover
+	background #444
+
+.burger_line
+	height 2px
+	width 100%
+	background #eee
+
+.player
+	width 75%
+	height 100%
+
+.fullScreen
+	height 100%
+	width 60px
+	fill #eee
+	padding 20px 18px
+.fullScreen:hover
+	background #444
+
+// @media (min-width: 1200px)
+
 // .aside
-	
+
 
 // .content
 
