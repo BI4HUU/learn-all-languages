@@ -6,14 +6,10 @@ header
 	right 0
 	left 0
 	height 60px
-	// height 9vh
-	color #eee
+	color #ccc
 	z-index 1
-	background-color rgba(11, 11, 11, .8)
-	&:hover
-		background-color rgba(0, 0, 0, .8)
+	background-color rgba(8, 8, 8, .8)
 
-// .item_menu
 #options
 	display flex
 	flex-direction column
@@ -21,27 +17,69 @@ header
 	height 100%
 	width 60px
 	padding 20px 18px
-	// padding 18px 15px
 
-.options:hover
-	background #444
+#options:hover
+	background #000
+	cursor pointer
+#options:hover .burger_line
+	background #fff
 
 .burger_line
 	height 2px
 	width 100%
-	background #eee
+	background #ccc
+
 
 .player
-	width 75%
+	display flex
+	flex-direction column
+	flex-grow 1
 	height 100%
+
+#wrapButtonPlayer
+	display flex
+	justify-content center
+	height 70%
+#wrapButtonPlayer *
+	height 100%
+	padding 3px 10px
+#wrapButtonPlayer svg
+	fill #ccc
+	&:hover
+		fill #fff
+		cursor pointer
+
+#rewind_play
+	display none
+
+#rewind
+	display flex
+	margin 0 5%
+	width 90%
+	background #222
+	height 30%
+	cursor pointer
+
+.rewind_item
+	display flex
+	flex-grow 1
+	height 100%
+	background #444
+	&:hover
+		background #fff
 
 .fullScreen
 	height 100%
 	width 60px
-	fill #eee
 	padding 20px 18px
-.fullScreen:hover
-	background #444
+	&:hover
+		background #000
+		& .fullScreen_icon
+			border solid 1px #fff
+.fullScreen_icon
+	border solid 1px #ccc
+	height 100%
+	width 100%
 
 // @media (min-width: 1200px)
 

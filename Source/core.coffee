@@ -4,11 +4,12 @@ slider = id 'body'
 numberNextSlide = 1
 numberBackSlide = 1
 time = 4000
+rewind = id 'rewind'
+rewind_pause = id 'rewind_pause'
+rewind_play = id 'rewind_play'
 setI = setInterval( () =>
-	next()
+	run()
 time)
-# console.log language_HTML
-# console.log Object.keys(language_HTML).length
 ######################################
 
 parse_slide = (obj) ->
@@ -17,50 +18,102 @@ parse_slide = (obj) ->
 		DOM_slide = document.createElement('div')
 		DOM_slide.setAttribute 'class', 'row'
 		slider.appendChild parse_col val, DOM_slide
-	# console.log 'slider'
-	# console.log slider
 	return
 parse_col = (obj, DOM_slide) ->
 	for key, val of obj
 		DOM_col = document.createElement('div')
 		DOM_col.setAttribute 'class', 'col'
 		DOM_slide.appendChild parse_row val, DOM_col
-		# console.log parse_row val
 	return DOM_slide
-	# slider.appendChild
 
 parse_row = (arr_obj, DOM_col) ->
 	for val in arr_obj
-		# console.log val[0]
 		for key, val of val[0]
 			div = document.createElement('div')
 			div.setAttribute 'class', key
 			div.textContent = val
 			DOM_col.appendChild div
-			# console.log DOM_col
 	return DOM_col
 
 
 parse_slide allSlides.slide1.see
 
 
-# DOM_Slide = 
-# console.log DOM_Slide
-# slider.appendChild DOM_Slide
-
 ######################################
 
 clearIntervalMini = () ->
 	clearInterval setI
 	setI = setInterval(	() =>
-		next
+		next()
 	time)
 
-next = (number) ->
-	clearIntervalMini()
-	numberNextSlide++
-	NextSlide = parse_slide allSlides["slide"+numberNextSlide].see
-	console.log allSlides["slide"+numberNextSlide].see
+next = () ->
+	numberNextSlide_plus = numberNextSlide
+	numberNextSlide_plus++
+	if numberNextSlide_plus <= allSlidesLength
+		numberNextSlide++
+		run()
+
+run = (number) ->
+	if number
+		numberNextSlide = number
+	if numberNextSlide <= allSlidesLength
+		if numberNextSlide > 0
+			rewind_play.style.display = 'none'
+			rewind_pause.style.display = 'block'
+			clearIntervalMini()
+			parse_slide allSlides["slide"+numberNextSlide].see
+
+back = () ->
+	numberNextSlide_minus = numberNextSlide
+	numberNextSlide_minus--
+	if numberNextSlide_minus > 0
+		numberNextSlide--
+		run()
+
+pause = () ->
+	clearInterval setI
+	rewind_pause.style.display = 'none'
+	rewind_play.style.display = 'block'
+
+
+i_b_r = 0
+for key, val of allSlides
+	i_b_r++
+	button_rewind = document.createElement "div"
+	button_rewind.classList.add "rewind_item"
+	button_rewind.setAttribute "onclick", "run(" + i_b_r + ")"
+	rewind.appendChild button_rewind
+
+fullScreen = () ->
+	slider.mozRequestFullScreen()
+	# 	if slider.mozRequestFullScreen() {} else {document.mozCancelFullScreen()}
+	# slider.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+	# 	if (slider.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT)) {} else {document.webkitCancelFullScreen()}
+
+
+# for ( let i = 0; i < allSlidesLength; i++ ) {
+# 	allSlides[i].classList.add(`slide`);
+# 	allSlides[i].classList.add(`slide${i+1}`);
+# 	let buttonNumber = document.createElement(`div`);
+# 	buttonNumber.classList.add(`buttonNumber`);
+# 	buttonNumber.setAttribute(`onclick`, `next(${i+1})` );
+# 	document.getElementsByClassName( `wrapButtonNumber` )[0].appendChild(buttonNumber);
+# }
+# let allButtonNumber = document.getElementsByClassName( `wrapButtonNumber` )[0].childNodes;
+# let virtualSlideNext = document.getElementsByClassName( `slide${numberNextSlide}` )[0];
+# let virtualSlideBack = document.getElementsByClassName( `slide${numberBackSlide}` )[0];
+
+
+
+# function autoHover(number) {
+# 	for ( let i = 0; i < allSlidesLength; i++ ) {
+# 		allButtonNumber[i].classList.remove("sliderButtonActive");
+# 	};
+# 	allButtonNumber[number].classList.add("sliderButtonActive");
+# };
+# autoHover(numberBackSlide-1);
+
 
 # function next(number) {
 # 	clearIntervalMini();
@@ -90,35 +143,11 @@ next = (number) ->
 
 # console.log language_HTML
 # for dish, i of language_HTML
-# 	console.log dish
-# 	console.log i
-setInterval
 
 # let zIndex = 8;
 # 
 # allSlides[0].style.zIndex = zIndex-1;
 
-# for ( let i = 0; i < allSlidesLength; i++ ) {
-# 	allSlides[i].classList.add(`slide`);
-# 	allSlides[i].classList.add(`slide${i+1}`);
-# 	let buttonNumber = document.createElement(`div`);
-# 	buttonNumber.classList.add(`buttonNumber`);
-# 	buttonNumber.setAttribute(`onclick`, `next(${i+1})` );
-# 	document.getElementsByClassName( `wrapButtonNumber` )[0].appendChild(buttonNumber);
-# }
-# let allButtonNumber = document.getElementsByClassName( `wrapButtonNumber` )[0].childNodes;
-# let virtualSlideNext = document.getElementsByClassName( `slide${numberNextSlide}` )[0];
-# let virtualSlideBack = document.getElementsByClassName( `slide${numberBackSlide}` )[0];
-
-
-
-# function autoHover(number) {
-# 	for ( let i = 0; i < allSlidesLength; i++ ) {
-# 		allButtonNumber[i].classList.remove("sliderButtonActive");
-# 	};
-# 	allButtonNumber[number].classList.add("sliderButtonActive");
-# };
-# autoHover(numberBackSlide-1);
 # setTimeout(() => {
 # 	slider.style.height = virtualSlideBack.clientHeight
 # }, 100);

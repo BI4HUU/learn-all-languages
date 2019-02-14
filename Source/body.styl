@@ -1,41 +1,43 @@
 
 .tag
-	color #2568ca
+	color #27c
 	white-space pre
 
 .class
-	color #6cd0fe
+	color #7df
 	white-space pre
 
 .text
-	color #d4d4d4
+	color #eee
 	white-space pre
+
+.body_menu
+	display flex
+	height 100%
 
 #body
 	display flex
 	flex-wrap wrap
-	padding-top 66px
-	height 100%
-	// position absolute
-	// top 0
-	// right 0
-	// bottom 0
-	// left 0
-
-.body_wrap
-	display flex
-	height 100%
+	padding-top 88px
 
 #menu
 	display none
 	margin-top 60px
 	padding-top 10px
 	padding-bottom 10px
-	color #eee
-	background rgba(11, 11, 11, .8)
+	color #ccc
+	background rgba(20, 20, 20, .4)
+
 .see
 	display block !important
-.menu_item
+	
+.menu_item, .menu_item_wrap
 	padding 5px 15px
+	cursor pointer
+.menu_item_wrap
+	display flex
+	padding 0
+
 .menu_item:hover
-	background rgba(0, 0, 0, .8)
+	background #000
+	color #fff

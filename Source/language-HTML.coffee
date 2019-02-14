@@ -10,7 +10,7 @@ language_HTML =
 					[tag: '</h1>']
 				]
 				row2: [
-					[tag: '2<h1']
+					[tag: '<h1']
 					[class: ' class="className"']
 					[tag: ' >']
 					[text: 'Language HTML']
@@ -18,7 +18,7 @@ language_HTML =
 				]
 			col2:
 				row1: [
-					[tag: '21<h1']
+					[tag: '<h1']
 					[class: ' class="className"']
 					[tag: ' >']
 					[text: 'Language HTML']
@@ -30,14 +30,52 @@ language_HTML =
 		see:
 			col1:
 				row1: [
-					[tag: '1<h1']
+					[tag: '2<h1']
 					[class: ' class="className"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
-					[tag: '2<h1']
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+		time: 5000
+		voice: 'sound.mp3'
+	slide3:
+		see:
+			col1:
+				row1: [
+					[tag: '3<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row2: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+		time: 5000
+		voice: 'sound.mp3'
+	slide4:
+		see:
+			col1:
+				row1: [
+					[tag: '4<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row2: [
+					[tag: '<h1']
 					[class: ' class="className"']
 					[tag: ' >']
 					[text: ' HTML']
@@ -45,11 +83,70 @@ language_HTML =
 				]
 			col2:
 				row1: [
-					[tag: '21<h1']
+					[tag: '4<h1']
 					[class: ' class="className"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
+				]
+				row2: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+			col3:
+				row1: [
+					[tag: '4<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row2: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+			col4:
+				row1: [
+					[tag: '4<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row2: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row3: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row4: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+		time: 5000
+		voice: 'sound.mp3'
+	slide5:
+		see:
+			col1:
+				row1: [
+					[tag: 'THE END']
 				]
 		time: 5000
 		voice: 'sound.mp3'

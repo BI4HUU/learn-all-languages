@@ -12,8 +12,3 @@ menu_toggle = function() {
 menu_off = function() {
   return menu.classList.remove('see');
 };
-
-// options.onclick = menu_toggle
-console.log(options);
-
-console.log(menu);

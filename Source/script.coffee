@@ -1,4 +1,3 @@
-
 menu = id 'menu'
 options = id 'options'
 menu_toggle = () ->
@@ -7,6 +6,3 @@ menu_toggle = () ->
 	return
 menu_off = () ->
 	menu.classList.remove 'see'
-# options.onclick = menu_toggle
-console.log options 
-console.log menu
