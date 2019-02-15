@@ -1,4 +1,4 @@
-var allSlides, allSlidesLength, back, button_rewind, clearIntervalMini, fullScreen, i_b_r, key, next, numberBackSlide, numberNextSlide, parse_col, parse_row, parse_slide, pause, rewind, rewind_pause, rewind_play, run, setI, slider, time, val;
+var Close_full_screen, Full_screen, Lang_togle, allSlides, allSlidesLength, autoHover, back, block_full_screen, button_rewind, clearIntervalMini, closeFullScreen, fullScreen, i_b_r, key, next, numberNextSlide, parse_col, parse_row, parse_slide, pause, rewind, rewind_pause, rewind_play, run, setI, slider, time, val;
 
 allSlides = language_HTML;
 
@@ -8,9 +8,7 @@ slider = id('body');
 
 numberNextSlide = 1;
 
-numberBackSlide = 1;
-
-time = 4000;
+time = 14;
 
 rewind = id('rewind');
 
@@ -24,13 +22,19 @@ setI = setInterval(() => {
 
 //#####################################
 parse_slide = function(obj) {
-  var DOM_slide, key, val;
+  var DOM_slide, key, key_slice, val;
   slider.innerHTML = '';
   for (key in obj) {
     val = obj[key];
+    key_slice = key.slice(0, 3);
     DOM_slide = document.createElement('div');
     DOM_slide.setAttribute('class', 'row');
-    slider.appendChild(parse_col(val, DOM_slide));
+    if (key_slice === 'col') {
+      slider.appendChild(parse_col(val, DOM_slide));
+    }
+    if (key_slice === 'row') {
+      slider.appendChild(parse_row(val, DOM_slide));
+    }
   }
 };
 
@@ -61,8 +65,7 @@ parse_row = function(arr_obj, DOM_col) {
   return DOM_col;
 };
 
-parse_slide(allSlides.slide1.see);
-
+// parse_slide allSlides.slide1.see
 //#####################################
 clearIntervalMini = function() {
   clearInterval(setI);
@@ -89,8 +92,10 @@ run = function(number) {
     if (numberNextSlide > 0) {
       rewind_play.style.display = 'none';
       rewind_pause.style.display = 'block';
+      time = allSlides["slide" + numberNextSlide].time;
       clearIntervalMini();
-      return parse_slide(allSlides["slide" + numberNextSlide].see);
+      parse_slide(allSlides["slide" + numberNextSlide].see);
+      return autoHover(numberNextSlide);
     }
   }
 };
@@ -122,66 +127,113 @@ for (key in allSlides) {
   rewind.appendChild(button_rewind);
 }
 
-fullScreen = function() {
-  return slider.mozRequestFullScreen();
+autoHover = function(number) {
+  var i_rewind;
+  number--;
+  i_rewind = 0;
+  for (val in allSlides) {
+    rewind.childNodes[i_rewind].classList.remove("rewind_active");
+    i_rewind++;
+  }
+  return rewind.childNodes[number].classList.add("rewind_active");
 };
 
-// 	if slider.mozRequestFullScreen() {} else {document.mozCancelFullScreen()}
-// slider.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-// 	if (slider.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT)) {} else {document.webkitCancelFullScreen()}
+block_full_screen = id('full_screen');
 
-// for ( let i = 0; i < allSlidesLength; i++ ) {
-// 	allSlides[i].classList.add(`slide`);
-// 	allSlides[i].classList.add(`slide${i+1}`);
-// 	let buttonNumber = document.createElement(`div`);
-// 	buttonNumber.classList.add(`buttonNumber`);
-// 	buttonNumber.setAttribute(`onclick`, `next(${i+1})` );
-// 	document.getElementsByClassName( `wrapButtonNumber` )[0].appendChild(buttonNumber);
-// }
-// let allButtonNumber = document.getElementsByClassName( `wrapButtonNumber` )[0].childNodes;
-// let virtualSlideNext = document.getElementsByClassName( `slide${numberNextSlide}` )[0];
-// let virtualSlideBack = document.getElementsByClassName( `slide${numberBackSlide}` )[0];
+fullScreen = id('fullScreen');
 
-// function autoHover(number) {
-// 	for ( let i = 0; i < allSlidesLength; i++ ) {
-// 		allButtonNumber[i].classList.remove("sliderButtonActive");
-// 	};
-// 	allButtonNumber[number].classList.add("sliderButtonActive");
-// };
-// autoHover(numberBackSlide-1);
+closeFullScreen = id('closeFullScreen');
 
-// function next(number) {
-// 	clearIntervalMini();
-// 	if (number) {
-// 		numberNextSlide = number;
-// 		virtualSlideBack = virtualSlideNext;
-// 	} else {
-// 		numberBackSlide = numberNextSlide;
-// 		numberNextSlide++;
-// 		if (numberNextSlide > allSlidesLength) {
-// 			numberNextSlide = 1;
-// 		};
-// 		virtualSlideBack = document.getElementsByClassName( `slide${numberBackSlide}` )[0];
-// 	};
-// 	virtualSlideNext = document.getElementsByClassName(`slide${numberNextSlide}`)[0];
-// 	autoHover(numberNextSlide-1);
-// 	if( virtualSlideBack == null ) {
-// 		virtualSlideBack = document.getElementsByClassName(`slide${1}`)[0];};
-// 		virtualSlideBack.style.cssText = `z-index: ${zIndex};`;
-// 		zIndex++;
-// 		virtualSlideNext.style.cssText = `z-index: ${zIndex};`;
-// };
+Full_screen = function() {
+  fullScreen.style.display = 'none';
+  closeFullScreen.style.display = 'block';
+  if (block_full_screen.requestFullscreen) {
+    return block_full_screen.requestFullscreen();
+  } else {
+    if (block_full_screen.mozRequestFullScreen) {
+      return block_full_screen.mozRequestFullScreen();
+    } else {
+      if (block_full_screen.webkitRequestFullscreen) {
+        return block_full_screen.webkitRequestFullscreen();
+      } else {
+        if (block_full_screen.msRequestFullscreen) {
+          return block_full_screen.msRequestFullscreen();
+        }
+      }
+    }
+  }
+};
 
-// console.log language_HTML
-// for dish, i of language_HTML
+Close_full_screen = function() {
+  closeFullScreen.style.display = 'none';
+  fullScreen.style.display = 'block';
+  if (document.exitFullscreen) {
+    return document.exitFullscreen();
+  } else {
+    if (document.mozCancelFullScreen) {
+      return document.mozCancelFullScreen();
+    } else {
+      if (document.webkitExitFullscreen) {
+        return document.webkitExitFullscreen();
+      } else {
+        if (document.msExitFullscreen) {
+          return document.msExitFullscreen();
+        }
+      }
+    }
+  }
+};
 
-// let zIndex = 8;
+Lang_togle = function(Lang) {
+  var EN, Lang_active, Lang_apply, RU;
+  EN = {
+    Language: 'Language',
+    Thems: 'Thems',
+    Font_size: 'Font size',
+    Support: 'Support',
+    Author: 'Author'
+  };
+  RU = {
+    Language: 'Язык',
+    Thems: 'Тема',
+    Font_size: 'Размер шрифта',
+    Support: 'Поддержка',
+    Author: 'Автор'
+  };
+  Lang_apply = function(obj) {
+    var results;
+    results = [];
+    for (key in obj) {
+      val = obj[key];
+      results.push(id(key).innerHTML = val);
+    }
+    return results;
+  };
+  Lang_active = function(lang) {
+    var Lang_items;
+    Lang_items = $('.Lang_item');
+    $('.Lang_item')[0].classList.remove('menu_item_active');
+    $('.Lang_item')[1].classList.remove('menu_item_active');
+    return id(lang).classList.add('menu_item_active');
+  };
+  if (Lang === 'RU') {
+    Lang_apply(RU);
+    Lang_active('RU');
+  }
+  if (Lang === 'EN') {
+    Lang_apply(EN);
+    return Lang_active('EN');
+  }
+};
 
-// allSlides[0].style.zIndex = zIndex-1;
+if (navigator.language === 'ru-RU') {
+  Lang_togle("RU");
+}
 
-// setTimeout(() => {
-// 	slider.style.height = virtualSlideBack.clientHeight
-// }, 100);
-// window.onresize = function () {
-// 	slider.style.height = virtualSlideBack.clientHeight
-// };
+if (navigator.language === 'ua-UA') {
+  Lang_togle("RU");
+}
+
+if (navigator.language === 'ru-UA') {
+  Lang_togle("RU");
+}

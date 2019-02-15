@@ -1,15 +1,17 @@
+.text, .tag, .class, .text, .white
+	white-space pre
 
 .tag
-	color #27c
-	white-space pre
+	color #27e
 
 .class
-	color #7df
-	white-space pre
+	color #8ef
 
 .text
 	color #eee
-	white-space pre
+
+.white
+	color #fff
 
 .body_menu
 	display flex
@@ -26,18 +28,22 @@
 	padding-top 10px
 	padding-bottom 10px
 	color #ccc
-	background rgba(20, 20, 20, .4)
+	background rgba(8, 8, 8, .8)
 
 .see
 	display block !important
 	
 .menu_item, .menu_item_wrap
 	padding 5px 15px
+	white-space nowrap
 	cursor pointer
+	box-sizing border-box
 .menu_item_wrap
 	display flex
 	padding 0
 
-.menu_item:hover
+.menu_item:hover, .menu_item_active
 	background #000
 	color #fff
+.menu_item_active
+	border 1px solid #eee

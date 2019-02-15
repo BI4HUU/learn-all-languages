@@ -22,7 +22,7 @@ language_HTML = {
           ],
           [
             {
-              text: 'Language HTML'
+              white: 'Language HTML'
             }
           ],
           [
@@ -89,7 +89,7 @@ language_HTML = {
         ]
       }
     },
-    time: 5000,
+    time: 2000,
     voice: 'sound.mp3'
   },
   slide2: {
@@ -151,7 +151,7 @@ language_HTML = {
         ]
       }
     },
-    time: 5000,
+    time: 2000,
     voice: 'sound.mp3'
   },
   slide3: {
@@ -211,9 +211,65 @@ language_HTML = {
             }
           ]
         ]
+      },
+      col2: {
+        row1: [
+          [
+            {
+              tag: '3<h1'
+            }
+          ],
+          [
+            {
+              class: ' class="className"'
+            }
+          ],
+          [
+            {
+              tag: ' >'
+            }
+          ],
+          [
+            {
+              text: ' HTML'
+            }
+          ],
+          [
+            {
+              tag: '</h1>'
+            }
+          ]
+        ],
+        row2: [
+          [
+            {
+              tag: '<h1'
+            }
+          ],
+          [
+            {
+              class: ' class="className"'
+            }
+          ],
+          [
+            {
+              tag: ' >'
+            }
+          ],
+          [
+            {
+              text: ' HTML'
+            }
+          ],
+          [
+            {
+              tag: '</h1>'
+            }
+          ]
+        ]
       }
     },
-    time: 5000,
+    time: 3000,
     voice: 'sound.mp3'
   },
   slide4: {
@@ -497,20 +553,18 @@ language_HTML = {
         ]
       }
     },
-    time: 5000,
+    time: 8000,
     voice: 'sound.mp3'
   },
   slide5: {
     see: {
-      col1: {
-        row1: [
-          [
-            {
-              tag: 'THE END'
-            }
-          ]
+      row1: [
+        [
+          {
+            tag: 'THE END...'
+          }
         ]
-      }
+      ]
     },
     time: 5000,
     voice: 'sound.mp3'

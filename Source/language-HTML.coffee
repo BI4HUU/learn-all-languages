@@ -6,7 +6,7 @@ language_HTML =
 					[tag: '1<h1']
 					[class: ' class="className"']
 					[tag: ' >']
-					[text: 'Language HTML']
+					[white: 'Language HTML']
 					[tag: '</h1>']
 				]
 				row2: [
@@ -24,7 +24,7 @@ language_HTML =
 					[text: 'Language HTML']
 					[tag: '</h1>']
 				]
-		time: 5000
+		time: 2000
 		voice: 'sound.mp3'
 	slide2:
 		see:
@@ -43,7 +43,7 @@ language_HTML =
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
-		time: 5000
+		time: 2000
 		voice: 'sound.mp3'
 	slide3:
 		see:
@@ -62,7 +62,22 @@ language_HTML =
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
-		time: 5000
+			col2:
+				row1: [
+					[tag: '3<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+				row2: [
+					[tag: '<h1']
+					[class: ' class="className"']
+					[tag: ' >']
+					[text: ' HTML']
+					[tag: '</h1>']
+				]
+		time: 3000
 		voice: 'sound.mp3'
 	slide4:
 		see:
@@ -140,13 +155,12 @@ language_HTML =
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
-		time: 5000
+		time: 8000
 		voice: 'sound.mp3'
 	slide5:
 		see:
-			col1:
 				row1: [
-					[tag: 'THE END']
+					[tag: 'THE END...']
 				]
 		time: 5000
 		voice: 'sound.mp3'

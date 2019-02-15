@@ -1,14 +1,15 @@
 .body_menu
 	#menu
-		.menu_item_wrap
-			.menu_item EN
-			.menu_item RU
-		.menu_item Language
-		.menu_item Thems
-		.menu_item Font size
+		.menu_item_wrap#Lang_wrap
+			.menu_item.menu_item_active.Lang_item#EN(onclick='Lang_togle("EN")') EN
+			.menu_item.Lang_item#RU(onclick='Lang_togle("RU")') Рус
+			.menu_item >
+		.menu_item#Language Language
+		.menu_item#Thems Thems
+		.menu_item#Font_size Font size
 		.menu_item
-		.menu_item Support
-		.menu_item Author
+		.menu_item#Support Support
+		.menu_item#Author Author
 
 	#body_wrap.container(onclick='menu_off()')
 		#body
