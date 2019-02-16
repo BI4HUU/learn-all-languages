@@ -1,11 +1,19 @@
 .body_menu
 	#menu
-		.menu_item_wrap#Lang_wrap
-			.menu_item.menu_item_active.Lang_item#EN(onclick='Lang_togle("EN")') EN
-			.menu_item.Lang_item#RU(onclick='Lang_togle("RU")') Рус
-			.menu_item >
+		.menu_item_wrap
+			.menu_item.menu_item_active.Lang_item#EN(onclick='Lang_togle("EN")') ENG
+			.menu_item.Lang_item#RU(onclick='Lang_togle("RU")') РУС
+		.menu_item_wrap
+			.menu_item.Lang_item#ZHO(onclick='Lang_togle("ZHO")') 中文
+			.menu_item.Lang_item#SPA(onclick='Lang_togle("SPA")') Español
+		.menu_item
 		.menu_item#Language Language
-		.menu_item#Thems Thems
+		.menu_item
+		.menu_item#Theme Theme
+		.menu_item_wrap
+			.menu_item#Light Light
+			.menu_item#Dark Dark
+		.menu_item
 		.menu_item#Font_size Font size
 		.menu_item
 		.menu_item#Support Support

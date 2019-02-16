@@ -12,7 +12,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -39,7 +44,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -68,7 +78,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -103,7 +118,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -130,7 +150,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -165,7 +190,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -192,7 +222,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -221,7 +256,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -248,7 +288,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -283,7 +328,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -310,7 +360,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -339,7 +394,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -366,7 +426,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -395,7 +460,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -422,7 +492,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -451,7 +526,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -478,7 +558,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -505,7 +590,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [
@@ -532,7 +622,12 @@ language_HTML = {
           ],
           [
             {
-              class: ' class="className"'
+              attribute_name: ' class='
+            }
+          ],
+          [
+            {
+              attribute_value: '"attribute_value"'
             }
           ],
           [

@@ -4,14 +4,16 @@ language_HTML =
 			col1:
 				row1: [
 					[tag: '1<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[white: 'Language HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: 'Language HTML']
 					[tag: '</h1>']
@@ -19,7 +21,8 @@ language_HTML =
 			col2:
 				row1: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: 'Language HTML']
 					[tag: '</h1>']
@@ -31,14 +34,16 @@ language_HTML =
 			col1:
 				row1: [
 					[tag: '2<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
@@ -50,14 +55,16 @@ language_HTML =
 			col1:
 				row1: [
 					[tag: '3<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
@@ -65,14 +72,16 @@ language_HTML =
 			col2:
 				row1: [
 					[tag: '3<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
@@ -84,14 +93,16 @@ language_HTML =
 			col1:
 				row1: [
 					[tag: '4<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
@@ -99,14 +110,16 @@ language_HTML =
 			col2:
 				row1: [
 					[tag: '4<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
@@ -114,14 +127,16 @@ language_HTML =
 			col3:
 				row1: [
 					[tag: '4<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
@@ -129,28 +144,32 @@ language_HTML =
 			col4:
 				row1: [
 					[tag: '4<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row2: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row3: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']
 				]
 				row4: [
 					[tag: '<h1']
-					[class: ' class="className"']
+					[attribute_name: ' class=']
+					[attribute_value: '"attribute_value"']
 					[tag: ' >']
 					[text: ' HTML']
 					[tag: '</h1>']

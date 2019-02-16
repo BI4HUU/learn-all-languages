@@ -5,7 +5,6 @@ menu = id('menu');
 options = id('options');
 
 menu_toggle = function() {
-  console.log('toggle');
   menu.classList.toggle('see');
 };
 

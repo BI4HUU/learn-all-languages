@@ -6,7 +6,7 @@ time = 14
 rewind = id 'rewind'
 rewind_pause = id 'rewind_pause'
 rewind_play = id 'rewind_play'
-setI = setInterval( () =>
+setI = setInterval( () ->
 	run()
 time)
 ######################################
@@ -43,7 +43,7 @@ parse_row = (arr_obj, DOM_col) ->
 
 clearIntervalMini = () ->
 	clearInterval setI
-	setI = setInterval(	() =>
+	setI = setInterval(	() ->
 		next()
 	time)
 
@@ -129,26 +129,50 @@ Close_full_screen = () ->
 					document.msExitFullscreen()
 
 Lang_togle = (Lang) ->
+	console.log Lang
 	EN =
 		Language: 'Language'
-		Thems: 'Thems'
+		Theme: 'Theme'
 		Font_size: 'Font size'
 		Support: 'Support'
 		Author: 'Author'
+		Light: 'Light'
+		Dark: 'Dark'
 	RU =
 		Language: 'Язык'
-		Thems: 'Тема'
+		Theme: 'Тема'
 		Font_size: 'Размер шрифта'
 		Support: 'Поддержка'
 		Author: 'Автор'
+		Light: 'Светлая'
+		Dark: 'Темная'
+	SPA =
+		Language: 'Idioma'
+		Theme: 'Tema'
+		Font_size: 'Tamaño de fuente'
+		Support: 'Apoyo'
+		Author: 'Autor'
+		Light: 'Ligero'
+		Dark: 'Oscuro'
+	ZHO =
+		Language: '语言'
+		Theme: '主题'
+		Font_size: '字体大小'
+		Support: '支持'
+		Author: '作者'
+		Light: '光'
+		Dark: '黑'
+
 	Lang_apply = (obj) ->
 		for key, val of obj
 			id(key).innerHTML = val
 
 	Lang_active = (lang) ->
-		Lang_items = $ '.Lang_item'
+		# Lang_items = $ '.Lang_item'
 		$('.Lang_item')[0].classList.remove('menu_item_active')
 		$('.Lang_item')[1].classList.remove('menu_item_active')
+		$('.Lang_item')[2].classList.remove('menu_item_active')
+		$('.Lang_item')[3].classList.remove('menu_item_active')
 		id(lang).classList.add 'menu_item_active'
 
 	if Lang == 'RU'
@@ -157,10 +181,20 @@ Lang_togle = (Lang) ->
 	if Lang == 'EN'
 		Lang_apply EN
 		Lang_active 'EN'
+	if Lang == 'SPA'
+		Lang_apply SPA
+		Lang_active 'SPA'
+	if Lang == 'ZHO'
+		Lang_apply ZHO
+		Lang_active 'ZHO'
 
-if navigator.language == 'ru-RU'
+if navigator.language == 'ru-RU' || 'ua-UA' || 'ru-UA' || 'ru' || 'ua' || 'uk'
 	Lang_togle "RU"
-if navigator.language == 'ua-UA'
-	Lang_togle "RU"
-if navigator.language == 'ru-UA'
-	Lang_togle "RU"
+if navigator.language == 'EN' || 'en-EN' || "en" || "en-US" || "en-EG" || "en-AU" || "en-GB" || "en-CA" || "en-NZ" || "en-IE" || "en-ZA" || "en-JM" || "en-BZ" || "en-TT"
+	Lang_togle "EN"
+if navigator.language == 'zh-CN' || 'zh' || "zh-TW" || "zh-HK" || "zh-SG" || 'zh-ZH'
+	Lang_togle "ZHO"
+if navigator.language == 'es-ES' || 'es' || "es-AR" || "es-GT" || "es-CR" || "es-PA" || "es-DO" || "es-MX" || "es-VE" || "es-CO" || "es-PE" || "es-EC" || "es-CL" || "es-UY" || "es-PY" || "es-BO" || "es-SV" || "es-HN" || "es-NI" || "es-PR"
+	Lang_togle "SPA"
+
+
