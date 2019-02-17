@@ -179,7 +179,7 @@ language_HTML =
 	slide5:
 		see:
 				row1: [
-					[tag: 'THE END...']
+					[tag: 'THE END']
 				]
 		time: 5000
 		voice: 'sound.mp3'

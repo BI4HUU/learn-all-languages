@@ -14,7 +14,6 @@
 .attribute_value
 	color #f06500
 
-// .Theme_dark
 .body_menu
 	display flex
 	height 100%
@@ -29,11 +28,6 @@
 	margin-top 60px
 	padding-top 10px
 	padding-bottom 10px
-	color #ccc
-	background rgba(8, 8, 8, .8)
-// .Theme_dark #menu
-// 	color #ccc
-// 	background rgba(8, 8, 8, .8)
 
 .see
 	display block !important
@@ -43,15 +37,39 @@
 	white-space nowrap
 	cursor pointer
 	box-sizing border-box
+
 .menu_item_wrap
 	display flex
 	padding 0
 
-.menu_item:hover, .menu_item_active
-	background #000
-	color #fff
-.menu_item_active
-	border 1px solid #eee
 
 .end
 	margin-left auto
+
+
+.Theme_dark
+	background #1e1e1e
+	.text
+		color #eee
+	#menu
+		color #ccc
+		background rgba(8, 8, 8, .8)
+	.menu_item_active
+		border 1px solid #eee
+	.menu_item:hover, .menu_item_active
+		background #000
+		color #fff
+.Theme_lite
+	background #eeeeee
+	.text
+		color #333
+	#menu
+		color #333
+		background rgba(222, 222, 222, .8)
+	.menu_item_active
+		border 1px solid #444
+	.menu_item:hover, .menu_item_active
+		background #fff
+		color #000
+	.attribute_name
+		color #800000

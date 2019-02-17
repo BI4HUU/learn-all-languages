@@ -188,13 +188,17 @@ Lang_togle = (Lang) ->
 		Lang_apply ZHO
 		Lang_active 'ZHO'
 
-if navigator.language == 'ru-RU' || 'ua-UA' || 'ru-UA' || 'ru' || 'ua' || 'uk'
+if navigator.language == 'ru-RU'
+#  || 'ua-UA' || 'ru-UA' || 'ru' || 'ua' || 'uk'
 	Lang_togle "RU"
-if navigator.language == 'EN' || 'en-EN' || "en" || "en-US" || "en-EG" || "en-AU" || "en-GB" || "en-CA" || "en-NZ" || "en-IE" || "en-ZA" || "en-JM" || "en-BZ" || "en-TT"
+if navigator.language == 'en-EN'
+#  || 'EN' || "en" || "en-US" || "en-EG" || "en-AU" || "en-GB" || "en-CA" || "en-NZ" || "en-IE" || "en-ZA" || "en-JM" || "en-BZ" || "en-TT"
 	Lang_togle "EN"
-if navigator.language == 'zh-CN' || 'zh' || "zh-TW" || "zh-HK" || "zh-SG" || 'zh-ZH'
+if navigator.language == 'zh-CN'
+#  || 'zh' || "zh-TW" || "zh-HK" || "zh-SG" || 'zh-ZH'
 	Lang_togle "ZHO"
-if navigator.language == 'es-ES' || 'es' || "es-AR" || "es-GT" || "es-CR" || "es-PA" || "es-DO" || "es-MX" || "es-VE" || "es-CO" || "es-PE" || "es-EC" || "es-CL" || "es-UY" || "es-PY" || "es-BO" || "es-SV" || "es-HN" || "es-NI" || "es-PR"
+if navigator.language == 'es-ES'
+#  || 'es' || "es-AR" || "es-GT" || "es-CR" || "es-PA" || "es-DO" || "es-MX" || "es-VE" || "es-CO" || "es-PE" || "es-EC" || "es-CL" || "es-UY" || "es-PY" || "es-BO" || "es-SV" || "es-HN" || "es-NI" || "es-PR"
 	Lang_togle "SPA"
 
 
