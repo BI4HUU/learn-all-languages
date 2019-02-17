@@ -656,7 +656,7 @@ language_HTML = {
       row1: [
         [
           {
-            tag: 'THE END...'
+            tag: 'THE END'
           }
         ]
       ]
