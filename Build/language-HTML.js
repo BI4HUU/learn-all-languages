@@ -1,671 +1,104 @@
 var language_HTML;
 
-language_HTML = {
-  slide1: {
-    see: {
-      col1: {
-        row1: [
-          [
+language_HTML = [
+  {
+    slide: {
+      see: [
+        {
+          col: [
             {
-              tag: '1<h1'
-            }
-          ],
-          [
+              line: [
+                {
+                  'h1 text': 'HTML'
+                },
+                {
+                  'h2 text': ' - HyperText Markup Language'
+                }
+              ]
+            },
             {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              white: 'Language HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
+              line: [
+                {
+                  text: '«язык гипертекстовой разметки» — стандартизированный язык разметки документов во Всемирной паутине.'
+                }
+              ]
             }
           ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: 'Language HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      },
-      col2: {
-        row1: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: 'Language HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      }
-    },
-    time: 2000,
-    voice: 'sound.mp3'
+        }
+      ],
+      time: 2000,
+      voice: 'sound.mp3'
+    }
   },
-  slide2: {
-    see: {
-      col1: {
-        row1: [
-          [
+  {
+    slide: {
+      see: [
+        {
+          col: [
             {
-              tag: '2<h1'
-            }
-          ],
-          [
+              line: [
+                {
+                  comment: '<!-- comment -->'
+                }
+              ]
+            },
             {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
+              line: [
+                {
+                  tag: '<div '
+                },
+                {
+                  attribute_name: 'class='
+                },
+                {
+                  attribute_value: '"className"'
+                },
+                {
+                  tag: ' > '
+                },
+                {
+                  text: 'tag content'
+                },
+                {
+                  tag: '</div> '
+                }
+              ]
             }
           ]
-        ]
-      }
-    },
-    time: 2000,
-    voice: 'sound.mp3'
-  },
-  slide3: {
-    see: {
-      col1: {
-        row1: [
-          [
-            {
-              tag: '3<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      },
-      col2: {
-        row1: [
-          [
-            {
-              tag: '3<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      }
-    },
-    time: 3000,
-    voice: 'sound.mp3'
-  },
-  slide4: {
-    see: {
-      col1: {
-        row1: [
-          [
-            {
-              tag: '4<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      },
-      col2: {
-        row1: [
-          [
-            {
-              tag: '4<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      },
-      col3: {
-        row1: [
-          [
-            {
-              tag: '4<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      },
-      col4: {
-        row1: [
-          [
-            {
-              tag: '4<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row2: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row3: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ],
-        row4: [
-          [
-            {
-              tag: '<h1'
-            }
-          ],
-          [
-            {
-              attribute_name: ' class='
-            }
-          ],
-          [
-            {
-              attribute_value: '"attribute_value"'
-            }
-          ],
-          [
-            {
-              tag: ' >'
-            }
-          ],
-          [
-            {
-              text: ' HTML'
-            }
-          ],
-          [
-            {
-              tag: '</h1>'
-            }
-          ]
-        ]
-      }
-    },
-    time: 8000,
-    voice: 'sound.mp3'
-  },
-  slide5: {
-    see: {
-      row1: [
-        [
-          {
-            tag: 'THE END'
-          }
-        ]
-      ]
-    },
-    time: 5000,
-    voice: 'sound.mp3'
+        }
+      ],
+      time: 2000,
+      voice: 'sound.mp3'
+    }
   }
-};
+];
 
+// slide4:
+// 	see:
+// 		col: [
+// 			row: [
+// 				{h1: 'HTML'}
+// 				{h1: 'HTML'}
+// 				{h1: 'HTML'}
+// 			]
+// 			row: [
+// 				{h1: 'HTML'}
+// 			]
+// 		]
+// 		col: [
+// 			row: [
+// 				{h1: 'HTML'}
+// 			]
+// 		]
+// 	time: 8000
+// 	voice: 'sound.mp3'
+// slide5:
+// 	see:
+// 			row1: [
+// 				[tag: 'THE END']
+// 			]
+// 	time: 5000
+// 	voice: 'sound.mp3'
 
 // tag:  5000
 // tag_text:  5000
