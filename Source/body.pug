@@ -1,20 +1,24 @@
 .body_menu
-	#menu
+	#menu   
 		.menu_item_wrap
-			.menu_item.menu_item_active.Lang_item#EN(onclick='Lang_togle("EN")') ENG
-			.menu_item.Lang_item#RU(onclick='Lang_togle("RU")') РУС
+			.menu_item.menu_item_active.Lang_item#EN(onclick='Lang_toggle("EN")') ENG
+			.menu_item.Lang_item#RU(onclick='Lang_toggle("RU")') РУС
 		.menu_item_wrap
-			.menu_item.Lang_item#ZHO(onclick='Lang_togle("ZHO")') 中文
-			.menu_item.Lang_item#SPA(onclick='Lang_togle("SPA")') Español
+			.menu_item.Lang_item#ZHO(onclick='Lang_toggle("ZHO")') 中文
+			.menu_item.Lang_item#SPA(onclick='Lang_toggle("SPA")') Español
 		.menu_item
 		.menu_item#Language Language
-		.menu_item
+		.menu_item.menu_item_header
 		.menu_item#Theme Theme
 		.menu_item_wrap
 			.menu_item#Light(onclick='Theme_lite()') Light
 			.menu_item#Dark(onclick='Theme_dark()') Dark
 		.menu_item
-		.menu_item#Font_size Font size
+		.menu_item.menu_item_header#Font_size Font size
+		.menu_item_wrap
+			.menu_item(onclick='Font_size(-1)') -
+			.menu_item#Font_size_data
+			.menu_item(onclick='Font_size(1)') +
 		.menu_item
 		.menu_item#Support Support
 		.menu_item#Author Author
@@ -25,4 +29,3 @@
 	//- 	.col
 	//- 		.tag < div >
 	//- 		.class class
-	//- 		.text text

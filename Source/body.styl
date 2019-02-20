@@ -1,23 +1,56 @@
 .text, .tag, .attribute_name, .text, .white
-	white-space pre
+	white-space pre-wrap
 .tag, .color_27e
 	color #27e
+
+.line
+	display flex
+	flex-wrap now-rap
+	align-items flex-end
+	padding-right 15px
+	padding-left 15px
 
 .attribute_name, .color_8ef
 	color #8ef
 
+.comment, .color_888
+	color #888
+	
 .text, .color_eee
 	color #eee
-
+	
 .white, .color_fff
 	color #fff
+
 .attribute_value
 	color #f06500
+
+.b
+	font-weight bold
+.i
+	font-style italic
+
+.h1
+	font-size 2rem
+.h2
+	font-size 1.5rem
+.h3
+	font-size 1.17rem
+.h4
+	font-size 1rem
+.h5
+	font-size .83rem
+.h6
+	font-size .67rem
+
+
+
 
 .body_menu
 	display flex
 	height 100%
-
+#body_wrap
+	overflow auto
 #body
 	display flex
 	flex-wrap wrap
@@ -28,6 +61,7 @@
 	margin-top 60px
 	padding-top 10px
 	padding-bottom 10px
+	// overflow-y auto
 
 .see
 	display block !important
@@ -73,3 +107,9 @@
 		color #000
 	.attribute_name
 		color #800000
+
+.menu_item_header
+	padding 5px 15px 0 15px
+
+.fs12
+	font-size 12px
