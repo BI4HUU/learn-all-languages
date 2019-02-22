@@ -6,21 +6,26 @@
 		.menu_item_wrap
 			.menu_item.Lang_item#ZHO(onclick='Lang_toggle("ZHO")') 中文
 			.menu_item.Lang_item#SPA(onclick='Lang_toggle("SPA")') Español
-		.menu_item
-		.menu_item#Language Language
-		.menu_item.menu_item_header
-		.menu_item#Theme Theme
+		.menu_item.menu_item_header#Language Language
+		.menu_item_wrap
+			.menu_item(onclick='') HTML
+			.menu_item(onclick='') CSS
+		.menu_item_wrap
+			.menu_item(onclick='') JS
+			.menu_item(onclick='') PYTON
+		.menu_item_wrap
+			.menu_item(onclick='') JAVA
+			.menu_item(onclick='') C#
+		.menu_item.menu_item_header#Theme Theme
 		.menu_item_wrap
 			.menu_item#Light(onclick='Theme_lite()') Light
 			.menu_item#Dark(onclick='Theme_dark()') Dark
-		.menu_item
 		.menu_item.menu_item_header#Font_size Font size
 		.menu_item_wrap
 			.menu_item(onclick='Font_size(-1)') -
 			.menu_item#Font_size_data
 			.menu_item(onclick='Font_size(1)') +
-		.menu_item
-		.menu_item#Support Support
+		.menu_item.menu_item_header#Support Support
 		.menu_item#Author Author
 
 	#body_wrap.container(onclick='menu_off()')

@@ -1,17 +1,24 @@
 language_HTML = [
 	{slide:
 		see: [
+			{html: '<div onclick="run(1)" class="a">section1</div><div onclick="run(2)" class="a">section2</div><style>.test1 {color: red;}</style>'
+			}
+		]
+		time: 5000
+		voice: 'sound.mp3'
+	}
+	{slide:
+		see: [
 			{col: [
 				{line: [
-					{'h1 text': 'HTML'}
-					{'h2 text': ' - HyperText Markup Language'}
+					{'h2 text': 'HTML - HyperText Markup Language'}
 				]}
 				{line: [
-					{text: '«язык гипертекстовой разметки» — стандартизированный язык разметки документов во Всемирной паутине.'}
+					{text: ' Is the standard markup language for creating web pages and web applications.  With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.'}
 				]}
 			]}
 		]
-		time: 2000
+		time: 3000
 		voice: 'sound.mp3'
 	}
 	{slide:
@@ -24,43 +31,31 @@ language_HTML = [
 					{tag: '<div '}
 					{attribute_name: 'class='}
 					{attribute_value: '"className"'}
-					{tag: ' > '}
+					{tag: ' >'}
 					{text: 'tag content'}
 					{tag: '</div> '}
 				]}
+				{line: [
+					{tag: '<div></div>'}
+				]}
+				{line: [
+					{tag: '<div></div>'}
+				]}
+				{line: [
+					{attribute_name: 'class='}
+					{attribute_value: '"className"'}
+				]}
+				{line: [
+					{text: 'tag content'}
+				]}
+				{line: [
+					{comment: '<!-- -->'}
+				]}
 			]}
 		]
-		time: 2000
+		time: 4000
 		voice: 'sound.mp3'
 	}
 ]
-	# slide4:
-	# 	see:
-	# 		col: [
-	# 			row: [
-	# 				{h1: 'HTML'}
-	# 				{h1: 'HTML'}
-	# 				{h1: 'HTML'}
-	# 			]
-	# 			row: [
-	# 				{h1: 'HTML'}
-	# 			]
-	# 		]
-	# 		col: [
-	# 			row: [
-	# 				{h1: 'HTML'}
-	# 			]
-	# 		]
-	# 	time: 8000
-	# 	voice: 'sound.mp3'
-	# slide5:
-	# 	see:
-	# 			row1: [
-	# 				[tag: 'THE END']
-	# 			]
-	# 	time: 5000
-	# 	voice: 'sound.mp3'
-	
-				# tag:  5000
-				# tag_text:  5000
+
 

@@ -5,8 +5,7 @@
 
 .line
 	display flex
-	flex-wrap now-rap
-	align-items flex-end
+	flex-wrap nowrap
 	padding-right 15px
 	padding-left 15px
 
@@ -93,10 +92,13 @@
 	.menu_item:hover, .menu_item_active
 		background #000
 		color #fff
+	.menu_item_header:hover
+		color #ccc
+		background rgba(8, 8, 8, .0)
 .Theme_lite
 	background #eeeeee
 	.text
-		color #333
+		color #222
 	#menu
 		color #333
 		background rgba(222, 222, 222, .8)
@@ -107,9 +109,11 @@
 		color #000
 	.attribute_name
 		color #800000
-
+	.menu_item_header:hover
+		color #333
+		background rgba(8, 8, 8, .0)
 .menu_item_header
-	padding 5px 15px 0 15px
+	padding 15px 15px 0 15px
 
 .fs12
 	font-size 12px
