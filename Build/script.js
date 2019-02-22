@@ -75,6 +75,11 @@ parse_slide = function(arr) {
     val = arr[i];
     DOM_slide = document.createElement('div');
     DOM_slide.setAttribute('class', Object.keys(val)[0]);
+    if (Object.keys(val)[0] === 'html') {
+      DOM_slide.innerHTML = val.html;
+      console.log(DOM_slide);
+      slider.appendChild(DOM_slide);
+    }
     if (Object.keys(val)[0] === 'col') {
       slider.appendChild(parse_col(val, DOM_slide));
     }
