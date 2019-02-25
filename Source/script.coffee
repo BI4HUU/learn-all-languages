@@ -5,6 +5,9 @@ $ = (selector) ->
 	document.querySelectorAll selector
 id = (selector) ->
 	document.getElementById selector
+
+print = (data) ->
+	console.log data
 #############################################
 # SCRIPT
 #############################################
@@ -30,18 +33,35 @@ Theme_dark()
 #############################################
 # CORE
 #############################################
-allSlides = language_HTML
-allSlidesLength = language_HTML.length
+
 slider = id 'body'
 numberNextSlide = 0
-time = 88
 rewind = id 'rewind'
 rewind_pause = id 'rewind_pause'
 rewind_play = id 'rewind_play'
-setI = setInterval( () ->
-		run()
-	time)
+allSlides = 0
+allSlidesLength = 0
+time = 88
+setI = 0
 ######################################
+run_language = (language) ->
+	time = 88
+	numberNextSlide = 0
+	allSlides = 0
+	allSlidesLength = 0
+	allSlides = language
+	allSlidesLength = language.length
+	setI = setInterval( () ->
+			run()
+		time)
+	i_b_r = -1
+	id('rewind').innerHTML = ''
+	for key, val of allSlides
+		i_b_r++
+		button_rewind = document.createElement "div"
+		button_rewind.classList.add "rewind_item"
+		button_rewind.setAttribute "onclick", "run(" + i_b_r + ")"
+		rewind.appendChild button_rewind
 
 parse_slide = (arr) ->
 	slider.innerHTML = ''
@@ -50,7 +70,6 @@ parse_slide = (arr) ->
 		DOM_slide.setAttribute 'class', Object.keys(val)[0]
 		if Object.keys(val)[0] == 'html'
 			DOM_slide.innerHTML = val.html
-			console.log DOM_slide
 			slider.appendChild DOM_slide
 		if Object.keys(val)[0] == 'col'
 			slider.appendChild parse_col val, DOM_slide
@@ -89,6 +108,7 @@ clearIntervalMini = () ->
 	setI = setInterval(	() ->
 		next()
 	time)
+	console.log time
 
 next = () ->
 	allSlidesLength__ = allSlidesLength
@@ -127,13 +147,6 @@ pause = () ->
 	rewind_play.style.display = 'block'
 
 
-i_b_r = -1
-for key, val of allSlides
-	i_b_r++
-	button_rewind = document.createElement "div"
-	button_rewind.classList.add "rewind_item"
-	button_rewind.setAttribute "onclick", "run(" + i_b_r + ")"
-	rewind.appendChild button_rewind
 
 autoHover = (number) ->
 	i_rewind = 0
@@ -145,6 +158,14 @@ autoHover = (number) ->
 fullScreen = id 'fullScreen'
 closeFullScreen = id 'closeFullScreen'
 
+Language_active = (lang) ->
+	$('.Language_item')[0].classList.remove('menu_item_active')
+	$('.Language_item')[1].classList.remove('menu_item_active')
+	$('.Language_item')[2].classList.remove('menu_item_active')
+	$('.Language_item')[3].classList.remove('menu_item_active')
+	$('.Language_item')[4].classList.remove('menu_item_active')
+	$('.Language_item')[5].classList.remove('menu_item_active')
+	id(lang).classList.add 'menu_item_active'
 Full_screen = () ->
 	fullScreen.style.display = 'none'
 	closeFullScreen.style.display = 'block'
@@ -176,7 +197,6 @@ Close_full_screen = () ->
 					document.msExitFullscreen()
 
 Lang_toggle = (Lang) ->
-	console.log Lang
 	EN =
 		Language: 'Language'
 		Theme: 'Theme'
@@ -214,7 +234,7 @@ Lang_toggle = (Lang) ->
 		for key, val of obj
 			id(key).innerHTML = val
 
-	Lang_active = (lang) ->
+	Lang_interface_active = (lang) ->
 # Lang_items = $ '.Lang_item'
 		$('.Lang_item')[0].classList.remove('menu_item_active')
 		$('.Lang_item')[1].classList.remove('menu_item_active')
@@ -224,16 +244,16 @@ Lang_toggle = (Lang) ->
 
 	if Lang == 'RU'
 		Lang_apply RU
-		Lang_active 'RU'
+		Lang_interface_active 'RU'
 	if Lang == 'EN'
 		Lang_apply EN
-		Lang_active 'EN'
+		Lang_interface_active 'EN'
 	if Lang == 'SPA'
 		Lang_apply SPA
-		Lang_active 'SPA'
+		Lang_interface_active 'SPA'
 	if Lang == 'ZHO'
 		Lang_apply ZHO
-		Lang_active 'ZHO'
+		Lang_interface_active 'ZHO'
 
 if navigator.language == 'ru-RU'
 #  || 'ua-UA' || 'ru-UA' || 'ru' || 'ua' || 'uk'
@@ -247,6 +267,7 @@ if navigator.language == 'zh-CN'
 if navigator.language == 'es-ES'
 #  || 'es' || "es-AR" || "es-GT" || "es-CR" || "es-PA" || "es-DO" || "es-MX" || "es-VE" || "es-CO" || "es-PE" || "es-EC" || "es-CL" || "es-UY" || "es-PY" || "es-BO" || "es-SV" || "es-HN" || "es-NI" || "es-PR"
 	Lang_toggle "SPA"
+
 
 
 Font_size = (size) ->
