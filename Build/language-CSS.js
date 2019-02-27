@@ -1,11 +1,11 @@
-var language_HTML;
+var language_CSS;
 
-language_HTML = [
+language_CSS = [
   {
     slide: {
       see: [
         {
-          html: '<div onclick="run(1)" class="text a">Basics</div><div onclick="run(2)" class="text a">Practice</div><style></style>'
+          html: '<div onclick="run(1)" class="text a">Basics</div><div onclick="run(2)" class="text a">Practice</div><div onclick="run(2)" class="text a">Practice</div><style></style>'
         }
       ],
       time: 5000,
@@ -20,14 +20,14 @@ language_HTML = [
             {
               line: [
                 {
-                  'h2 text': 'HTML - HyperText Markup Language'
+                  'h2 text': 'CSS - Cascading Style Sheets '
                 }
               ]
             },
             {
               line: [
                 {
-                  text: ' Is the standard markup language for creating web pages and web applications.  With Cascading Style Sheets (CSS) and JavaScript(JS), it forms a triad of cornerstone technologies for the World Wide Web.'
+                  text: 'Is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.'
                 }
               ]
             }
@@ -35,7 +35,6 @@ language_HTML = [
         }
       ],
       time: 3000,
-      code: code1,
       voice: 'sound.mp3'
     }
   },
@@ -47,7 +46,44 @@ language_HTML = [
             {
               line: [
                 {
-                  comment: '<!-- comment -->'
+                  tag: '<div '
+                },
+                {
+                  attribute_name: 'style='
+                },
+                {
+                  attribute_value: '"color: green"'
+                },
+                {
+                  tag: ' >'
+                },
+                {
+                  text: 'Text color green'
+                },
+                {
+                  tag: '</div> '
+                }
+              ]
+            },
+            {
+              line: [
+                {
+                  tag: '<div '
+                },
+                {
+                  attribute_name: 'color='
+                },
+                {
+                  attribute_value: '"green"'
+                },
+                {
+                  tag: ' >'
+                },
+                {
+                  text: 'Text color green'
+                },
+                {
+                  tag: '</div> '
                 }
               ]
             },
@@ -60,13 +96,13 @@ language_HTML = [
                   attribute_name: 'class='
                 },
                 {
-                  attribute_value: '"className"'
+                  attribute_value: '"green"'
                 },
                 {
                   tag: ' >'
                 },
                 {
-                  text: 'tag content'
+                  text: 'Text color green'
                 },
                 {
                   tag: '</div> '
@@ -76,50 +112,27 @@ language_HTML = [
             {
               line: [
                 {
-                  tag: 'Where'
+                  attribute_value: '.green'
+                },
+                {
+                  text: ' {'
                 }
               ]
             },
             {
               line: [
                 {
-                  tag: '<div></div>'
+                  tag: '	color'
                 },
                 {
-                  text: ' - tag '
+                  text: ': green'
                 }
               ]
             },
             {
               line: [
                 {
-                  attribute_name: 'class='
-                },
-                {
-                  attribute_value: '"className"'
-                },
-                {
-                  text: ' - attribute '
-                }
-              ]
-            },
-            {
-              line: [
-                {
-                  text: 'tag content'
-                },
-                {
-                  text: ' - content '
-                }
-              ]
-            },
-            {
-              line: [
-                {
-                  comment: '<!-- -->'
-                },
-                {
-                  text: ' - comment (invisible on the web site)'
+                  text: '}'
                 }
               ]
             }
@@ -127,7 +140,6 @@ language_HTML = [
         }
       ],
       time: 4000,
-      code: code1,
       voice: 'sound.mp3'
     }
   }

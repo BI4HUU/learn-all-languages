@@ -1,7 +1,7 @@
 //############################################
 // JQuery
 //############################################
-var $, Close_full_screen, Font_size, Full_screen, Lang_toggle, Theme_dark, Theme_lite, allSlides, allSlidesLength, autoHover, back, button_rewind, clearIntervalMini, closeFullScreen, fullScreen, full_screen, i_b_r, id, key, menu, menu_off, menu_toggle, next, numberNextSlide, options, parse_col, parse_row, parse_slide, pause, rewind, rewind_pause, rewind_play, run, setI, slider, time, val;
+var $, Close_full_screen, Font_size, Full_screen, Lang_toggle, Language_active, Theme_dark, Theme_lite, allSlides, allSlidesLength, autoHover, back, clearIntervalMini, closeFullScreen, fullScreen, full_screen, id, menu, menu_off, menu_toggle, next, numberNextSlide, options, parse_col, parse_row, parse_slide, pause, print, rewind, rewind_pause, rewind_play, run, run_language, setI, slider, time;
 
 $ = function(selector) {
   return document.querySelectorAll(selector);
@@ -9,6 +9,10 @@ $ = function(selector) {
 
 id = function(selector) {
   return document.getElementById(selector);
+};
+
+print = function(data) {
+  return console.log(data);
 };
 
 //############################################
@@ -47,15 +51,9 @@ Theme_dark();
 //############################################
 // CORE
 //############################################
-allSlides = language_HTML;
-
-allSlidesLength = language_HTML.length;
-
 slider = id('body');
 
-numberNextSlide = 0;
-
-time = 88;
+numberNextSlide = -1;
 
 rewind = id('rewind');
 
@@ -63,11 +61,46 @@ rewind_pause = id('rewind_pause');
 
 rewind_play = id('rewind_play');
 
+allSlides = 0;
+
+allSlidesLength = 0;
+
+time = 88;
+
 setI = setInterval(function() {
-  return run();
+  return next();
 }, time);
 
+clearIntervalMini = function() {
+  clearInterval(setI);
+  setI = setInterval(function() {
+    return next();
+  }, time);
+  return console.log(time);
+};
+
 //#####################################
+run_language = function(language) {
+  var button_rewind, i_b_r, key, results, val;
+  numberNextSlide = -1;
+  allSlides = language;
+  allSlidesLength = language.length;
+  time = 88;
+  id('rewind').innerHTML = '';
+  clearIntervalMini();
+  i_b_r = -1;
+  results = [];
+  for (key in allSlides) {
+    val = allSlides[key];
+    i_b_r++;
+    button_rewind = document.createElement("div");
+    button_rewind.classList.add("rewind_item");
+    button_rewind.setAttribute("onclick", "run(" + i_b_r + ")");
+    results.push(rewind.appendChild(button_rewind));
+  }
+  return results;
+};
+
 parse_slide = function(arr) {
   var DOM_slide, i, len, val;
   slider.innerHTML = '';
@@ -77,7 +110,6 @@ parse_slide = function(arr) {
     DOM_slide.setAttribute('class', Object.keys(val)[0]);
     if (Object.keys(val)[0] === 'html') {
       DOM_slide.innerHTML = val.html;
-      console.log(DOM_slide);
       slider.appendChild(DOM_slide);
     }
     if (Object.keys(val)[0] === 'col') {
@@ -106,22 +138,23 @@ parse_col = function(obj, DOM_slide) {
 
 parse_row = function(arr_obj, DOM_col) {
   var div, i, key, key0, len, val, val2, val3;
-// for val in arr_obj
-// console.log arr_obj
-// console.log key
   for (key0 in arr_obj) {
     val2 = arr_obj[key0];
     for (i = 0, len = val2.length; i < len; i++) {
       val3 = val2[i];
       for (key in val3) {
         val = val3[key];
-        // for key2, val2 of arr_obj
-        // console.log key
-        // console.log val
-        div = document.createElement('div');
-        div.setAttribute('class', key);
-        div.textContent = val;
-        DOM_col.appendChild(div);
+        if (key.substring(0, 4) === 'html') {
+          div = document.createElement('div');
+          div.setAttribute('class', key);
+          div.innerHTML = val;
+          DOM_col.appendChild(div);
+        } else {
+          div = document.createElement('div');
+          div.setAttribute('class', key);
+          div.textContent = val;
+          DOM_col.appendChild(div);
+        }
       }
     }
   }
@@ -129,13 +162,6 @@ parse_row = function(arr_obj, DOM_col) {
 };
 
 //#####################################
-clearIntervalMini = function() {
-  clearInterval(setI);
-  return setI = setInterval(function() {
-    return next();
-  }, time);
-};
-
 next = function() {
   var allSlidesLength__;
   allSlidesLength__ = allSlidesLength;
@@ -151,7 +177,6 @@ run = function(number) {
   number++;
   if (number) {
     number--;
-    // console.log number
     numberNextSlide = number;
   }
   if (numberNextSlide < allSlidesLength) {
@@ -162,15 +187,13 @@ run = function(number) {
       clearIntervalMini();
       // console.log allSlides[numberNextSlide].slide.time
       parse_slide(allSlides[numberNextSlide].slide.see);
+      print(allSlides[numberNextSlide].slide.code);
       return autoHover(numberNextSlide);
     }
   }
 };
 
 back = function() {
-  // console.log numberNextSlide
-  // numberNextSlide_minus = numberNextSlide
-  // numberNextSlide_minus--
   if (numberNextSlide > 0) {
     numberNextSlide--;
     return run();
@@ -183,19 +206,8 @@ pause = function() {
   return rewind_play.style.display = 'block';
 };
 
-i_b_r = -1;
-
-for (key in allSlides) {
-  val = allSlides[key];
-  i_b_r++;
-  button_rewind = document.createElement("div");
-  button_rewind.classList.add("rewind_item");
-  button_rewind.setAttribute("onclick", "run(" + i_b_r + ")");
-  rewind.appendChild(button_rewind);
-}
-
 autoHover = function(number) {
-  var i_rewind;
+  var i_rewind, val;
   i_rewind = 0;
   for (val in allSlides) {
     rewind.childNodes[i_rewind].classList.remove("rewind_active");
@@ -207,6 +219,16 @@ autoHover = function(number) {
 fullScreen = id('fullScreen');
 
 closeFullScreen = id('closeFullScreen');
+
+Language_active = function(lang) {
+  $('.Language_item')[0].classList.remove('menu_item_active');
+  $('.Language_item')[1].classList.remove('menu_item_active');
+  $('.Language_item')[2].classList.remove('menu_item_active');
+  $('.Language_item')[3].classList.remove('menu_item_active');
+  $('.Language_item')[4].classList.remove('menu_item_active');
+  $('.Language_item')[5].classList.remove('menu_item_active');
+  return id(lang).classList.add('menu_item_active');
+};
 
 Full_screen = function() {
   fullScreen.style.display = 'none';
@@ -249,8 +271,7 @@ Close_full_screen = function() {
 };
 
 Lang_toggle = function(Lang) {
-  var EN, Lang_active, Lang_apply, RU, SPA, ZHO;
-  console.log(Lang);
+  var EN, Lang_apply, Lang_interface_active, RU, SPA, ZHO;
   EN = {
     Language: 'Language',
     Theme: 'Theme',
@@ -288,7 +309,7 @@ Lang_toggle = function(Lang) {
     Dark: '黑'
   };
   Lang_apply = function(obj) {
-    var results;
+    var key, results, val;
     results = [];
     for (key in obj) {
       val = obj[key];
@@ -296,7 +317,7 @@ Lang_toggle = function(Lang) {
     }
     return results;
   };
-  Lang_active = function(lang) {
+  Lang_interface_active = function(lang) {
     // Lang_items = $ '.Lang_item'
     $('.Lang_item')[0].classList.remove('menu_item_active');
     $('.Lang_item')[1].classList.remove('menu_item_active');
@@ -306,19 +327,19 @@ Lang_toggle = function(Lang) {
   };
   if (Lang === 'RU') {
     Lang_apply(RU);
-    Lang_active('RU');
+    Lang_interface_active('RU');
   }
   if (Lang === 'EN') {
     Lang_apply(EN);
-    Lang_active('EN');
+    Lang_interface_active('EN');
   }
   if (Lang === 'SPA') {
     Lang_apply(SPA);
-    Lang_active('SPA');
+    Lang_interface_active('SPA');
   }
   if (Lang === 'ZHO') {
     Lang_apply(ZHO);
-    return Lang_active('ZHO');
+    return Lang_interface_active('ZHO');
   }
 };
 
