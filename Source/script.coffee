@@ -35,27 +35,31 @@ Theme_dark()
 #############################################
 
 slider = id 'body'
-numberNextSlide = 0
+numberNextSlide = -1
 rewind = id 'rewind'
 rewind_pause = id 'rewind_pause'
 rewind_play = id 'rewind_play'
 allSlides = 0
 allSlidesLength = 0
 time = 88
-setI = 0
+setI = setInterval(	() ->
+	next()
+time)
+clearIntervalMini = () ->
+	clearInterval setI
+	setI = setInterval(	() ->
+		next()
+	time)
+	console.log time
 ######################################
 run_language = (language) ->
-	time = 88
-	numberNextSlide = 0
-	allSlides = 0
-	allSlidesLength = 0
+	numberNextSlide = -1
 	allSlides = language
 	allSlidesLength = language.length
-	setI = setInterval( () ->
-			run()
-		time)
-	i_b_r = -1
+	time = 88
 	id('rewind').innerHTML = ''
+	clearIntervalMini()
+	i_b_r = -1
 	for key, val of allSlides
 		i_b_r++
 		button_rewind = document.createElement "div"
@@ -86,29 +90,23 @@ parse_col = (obj, DOM_slide) ->
 	return DOM_slide
 
 parse_row = (arr_obj, DOM_col) ->
-	# for val in arr_obj
-	# console.log arr_obj
-		# console.log key
 	for key0, val2 of arr_obj
 		for val3 in val2
 			for key, val of val3
-				# for key2, val2 of arr_obj
-		# console.log key
-				# console.log val
-				div = document.createElement 'div'
-				div.setAttribute 'class', key
-				div.textContent = val
-				DOM_col.appendChild div
+				if key.substring(0, 4) == 'html'
+					div = document.createElement 'div'
+					div.setAttribute 'class', key
+					div.innerHTML = val
+					DOM_col.appendChild div
+				else
+					div = document.createElement 'div'
+					div.setAttribute 'class', key
+					div.textContent = val
+					DOM_col.appendChild div
 	return DOM_col
 
 ######################################
 
-clearIntervalMini = () ->
-	clearInterval setI
-	setI = setInterval(	() ->
-		next()
-	time)
-	console.log time
 
 next = () ->
 	allSlidesLength__ = allSlidesLength
@@ -122,7 +120,6 @@ run = (number) ->
 	number++
 	if number
 		number--
-		# console.log number
 		numberNextSlide = number
 	if numberNextSlide < allSlidesLength
 		if numberNextSlide >= 0
@@ -132,11 +129,9 @@ run = (number) ->
 			clearIntervalMini()
 			# console.log allSlides[numberNextSlide].slide.time
 			parse_slide allSlides[numberNextSlide].slide.see
+			print allSlides[numberNextSlide].slide.code
 			autoHover numberNextSlide
 back = () ->
-	# console.log numberNextSlide
-	# numberNextSlide_minus = numberNextSlide
-	# numberNextSlide_minus--
 	if numberNextSlide > 0
 		numberNextSlide--
 		run()
@@ -145,8 +140,6 @@ pause = () ->
 	clearInterval setI
 	rewind_pause.style.display = 'none'
 	rewind_play.style.display = 'block'
-
-
 
 autoHover = (number) ->
 	i_rewind = 0

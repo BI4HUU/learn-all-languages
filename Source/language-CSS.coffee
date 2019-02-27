@@ -1,7 +1,7 @@
 language_CSS = [
 	{slide:
 		see: [
-			{html: '<div onclick="run(1)" class="a">section1</div><div onclick="run(2)" class="a">section2</div><style>.test1 {color: red;}</style>'
+			{html: '<div onclick="run(1)" class="text a">Basics</div><div onclick="run(2)" class="text a">Practice</div><div onclick="run(2)" class="text a">Practice</div><style></style>'
 			}
 		]
 		time: 5000
@@ -11,10 +11,10 @@ language_CSS = [
 		see: [
 			{col: [
 				{line: [
-					{'h2 text': 'CSS - Cascading Style Sheets'}
+					{'h2 text': 'CSS - Cascading Style Sheets '}
 				]}
 				{line: [
-					{text: ' Is a style sheet language used for describing the presentation of a document written in a markup language like HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.'}
+					{text: 'Is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.'}
 				]}
 			]}
 		]

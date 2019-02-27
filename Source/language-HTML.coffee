@@ -1,7 +1,7 @@
 language_HTML = [
 	{slide:
 		see: [
-			{html: '<div onclick="run(1)" class="a">section1</div><div onclick="run(2)" class="a">section2</div><style>.test1 {color: red;}</style>'
+			{html: '<div onclick="run(1)" class="text a">Basics</div><div onclick="run(2)" class="text a">Practice</div><style></style>'
 			}
 		]
 		time: 5000
@@ -14,11 +14,12 @@ language_HTML = [
 					{'h2 text': 'HTML - HyperText Markup Language'}
 				]}
 				{line: [
-					{text: ' Is the standard markup language for creating web pages and web applications.  With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.'}
+					{text: ' Is the standard markup language for creating web pages and web applications.  With Cascading Style Sheets (CSS) and JavaScript(JS), it forms a triad of cornerstone technologies for the World Wide Web.'}
 				]}
 			]}
 		]
 		time: 3000
+		code: code1
 		voice: 'sound.mp3'
 	}
 	{slide:
@@ -36,24 +37,29 @@ language_HTML = [
 					{tag: '</div> '}
 				]}
 				{line: [
-					{tag: '<div></div>'}
+					{tag: 'Where'}
 				]}
 				{line: [
 					{tag: '<div></div>'}
+					{text: ' - tag '}
 				]}
 				{line: [
 					{attribute_name: 'class='}
 					{attribute_value: '"className"'}
+					{text: ' - attribute '}
 				]}
 				{line: [
 					{text: 'tag content'}
+					{text: ' - content '}
 				]}
 				{line: [
 					{comment: '<!-- -->'}
+					{text: ' - comment (invisible on the web site)'}
 				]}
 			]}
 		]
 		time: 4000
+		code: code1
 		voice: 'sound.mp3'
 	}
 ]

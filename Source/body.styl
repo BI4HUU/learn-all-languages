@@ -64,7 +64,18 @@
 
 .see
 	display block !important
-	
+
+.accent
+	animation accent 2s infinite linear
+
+@keyframes accent
+	0%
+		background rgba(255,255,255 .2)
+	30%
+		background rgba(0,0,0 .2)
+	100%
+		background rgba(255,255,255 .2)
+
 .menu_item, .menu_item_wrap
 	padding 5px 15px
 	white-space nowrap
