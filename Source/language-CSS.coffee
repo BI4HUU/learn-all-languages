@@ -33,12 +33,18 @@ language_CSS = [
 					{tag: '</div> '}
 				]}
 				{line: [
+					{comment: 'or'}
+				]}
+				{line: [
 					{tag: '<div '}
 					{attribute_name: 'color='}
 					{attribute_value: '"green"'}
 					{tag: ' >'}
 					{text: 'Text color green'}
 					{tag: '</div> '}
+				]}
+				{line: [
+					{comment: 'or'}
 				]}
 				{line: [
 					{tag: '<div '}
@@ -49,15 +55,21 @@ language_CSS = [
 					{tag: '</div> '}
 				]}
 				{line: [
-					{attribute_value: '.green'}
+					{tag: '<style>'}
+				]}
+				{line: [
+					{attribute_value: '	.green'}
 					{text: ' {'}
 				]}
 				{line: [
-					{tag: '	color'}
+					{tag: '		color'}
 					{text: ': green'}
 				]}
 				{line: [
-					{text: '}'}
+					{text: '	}'}
+				]}
+				{line: [
+					{tag: '</style>'}
 				]}
 			]}
 		]

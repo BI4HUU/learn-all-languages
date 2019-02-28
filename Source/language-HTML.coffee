@@ -1,7 +1,7 @@
 language_HTML = [
 	{slide:
 		see: [
-			{html: '<div onclick="run(1)" class="text a">Basics</div><div onclick="run(2)" class="text a">Practice</div><style></style>'
+			{html: code2
 			}
 		]
 		time: 5000
@@ -37,7 +37,7 @@ language_HTML = [
 					{tag: '</div> '}
 				]}
 				{line: [
-					{tag: 'Where'}
+					{comment: 'Where'}
 				]}
 				{line: [
 					{tag: '<div></div>'}
@@ -55,6 +55,9 @@ language_HTML = [
 				{line: [
 					{comment: '<!-- -->'}
 					{text: ' - comment (invisible on the web site)'}
+				]}
+				{line: [
+					{html: '<a class="button" href="http://">Open in CodePen</a>'}
 				]}
 			]}
 		]

@@ -1,6 +1,6 @@
-.text, .tag, .attribute_name, .text, .white
+.text, .tag, .attribute_name, .text, .white, .attribute_value, .attribute_name
 	white-space pre-wrap
-.tag, .color_27e
+.tag
 	color #27e
 
 .line
@@ -9,16 +9,16 @@
 	padding-right 15px
 	padding-left 15px
 
-.attribute_name, .color_8ef
+.attribute_name
 	color #8ef
 
-.comment, .color_888
+.comment
 	color #888
 	
-.text, .color_eee
+.text
 	color #eee
-	
-.white, .color_fff
+
+.white
 	color #fff
 
 .attribute_value
@@ -42,7 +42,12 @@
 .h6
 	font-size .67rem
 
-
+a[class~="button"]
+	display block
+	cursor pointer
+	padding 5px 15px
+	margin 10px 0 
+	text-decoration none
 
 
 .body_menu
@@ -92,12 +97,19 @@
 
 
 .Theme_dark
+	color #fff
 	background #1e1e1e
 	.text
 		color #eee
 	#menu
 		color #ccc
 		background rgba(8, 8, 8, .8)
+	a[class~="button"]
+		border 1px solid #eee
+		color #fff
+	a[class~="button"]:hover
+		background #000
+		color #fff
 	.menu_item_active
 		border 1px solid #eee
 	.menu_item:hover, .menu_item_active
@@ -106,16 +118,22 @@
 	.menu_item_header:hover
 		color #ccc
 		background rgba(8, 8, 8, .0)
+
+
 .Theme_lite
+	color #000
 	background #eeeeee
 	.text
 		color #222
 	#menu
 		color #333
 		background rgba(222, 222, 222, .8)
+	a[class~="button"]
+		border 1px solid #444
+		color #000
 	.menu_item_active
 		border 1px solid #444
-	.menu_item:hover, .menu_item_active
+	.menu_item:hover, .menu_item_active, a[class~="button"]:hover
 		background #fff
 		color #000
 	.attribute_name
