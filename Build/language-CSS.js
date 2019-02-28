@@ -68,6 +68,13 @@ language_CSS = [
             {
               line: [
                 {
+                  comment: 'or'
+                }
+              ]
+            },
+            {
+              line: [
+                {
                   tag: '<div '
                 },
                 {
@@ -84,6 +91,13 @@ language_CSS = [
                 },
                 {
                   tag: '</div> '
+                }
+              ]
+            },
+            {
+              line: [
+                {
+                  comment: 'or'
                 }
               ]
             },
@@ -112,7 +126,14 @@ language_CSS = [
             {
               line: [
                 {
-                  attribute_value: '.green'
+                  tag: '<style>'
+                }
+              ]
+            },
+            {
+              line: [
+                {
+                  attribute_value: '	.green'
                 },
                 {
                   text: ' {'
@@ -122,7 +143,7 @@ language_CSS = [
             {
               line: [
                 {
-                  tag: '	color'
+                  tag: '		color'
                 },
                 {
                   text: ': green'
@@ -132,7 +153,14 @@ language_CSS = [
             {
               line: [
                 {
-                  text: '}'
+                  text: '	}'
+                }
+              ]
+            },
+            {
+              line: [
+                {
+                  tag: '</style>'
                 }
               ]
             }

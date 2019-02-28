@@ -5,7 +5,7 @@ language_HTML = [
     slide: {
       see: [
         {
-          html: '<div onclick="run(1)" class="text a">Basics</div><div onclick="run(2)" class="text a">Practice</div><style></style>'
+          html: code2
         }
       ],
       time: 5000,
@@ -76,7 +76,7 @@ language_HTML = [
             {
               line: [
                 {
-                  tag: 'Where'
+                  comment: 'Where'
                 }
               ]
             },
@@ -120,6 +120,13 @@ language_HTML = [
                 },
                 {
                   text: ' - comment (invisible on the web site)'
+                }
+              ]
+            },
+            {
+              line: [
+                {
+                  html: '<a class="button" href="http://">Open in CodePen</a>'
                 }
               ]
             }
