@@ -8,8 +8,7 @@ language_HTML = [
           html: code2
         }
       ],
-      time: 5000,
-      voice: 'sound.mp3'
+      time: 5000
     }
   },
   {
@@ -34,9 +33,9 @@ language_HTML = [
           ]
         }
       ],
-      time: 3000,
-      code: code1,
-      voice: 'sound.mp3'
+      voice: 'EN_HTML_html',
+      time: 5000,
+      code: code1
     }
   },
   {
@@ -44,13 +43,6 @@ language_HTML = [
       see: [
         {
           col: [
-            {
-              line: [
-                {
-                  comment: '<!-- comment -->'
-                }
-              ]
-            },
             {
               line: [
                 {
@@ -66,7 +58,7 @@ language_HTML = [
                   tag: ' >'
                 },
                 {
-                  text: 'tag content'
+                  text: 'text'
                 },
                 {
                   tag: '</div> '
@@ -106,20 +98,10 @@ language_HTML = [
             {
               line: [
                 {
-                  text: 'tag content'
+                  text: 'text'
                 },
                 {
                   text: ' - content '
-                }
-              ]
-            },
-            {
-              line: [
-                {
-                  comment: '<!-- -->'
-                },
-                {
-                  text: ' - comment (invisible on the web site)'
                 }
               ]
             },
@@ -133,9 +115,28 @@ language_HTML = [
           ]
         }
       ],
-      time: 4000,
-      code: code1,
-      voice: 'sound.mp3'
+      voice: 'EN_HTML_tag_attribute',
+      time: 11000,
+      code: code1
+    }
+  },
+  {
+    slide: {
+      see: [
+        {
+          col: [
+            {
+              line: [
+                {
+                  'h1 text': 'This projekt in developing'
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      time: 3000,
+      code: code1
     }
   }
 ];

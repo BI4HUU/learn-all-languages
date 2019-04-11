@@ -1,7 +1,7 @@
 //############################################
 // JQuery
 //############################################
-var $, Close_full_screen, Font_size, Full_screen, Lang_toggle, Language_active, Theme_dark, Theme_lite, allSlides, allSlidesLength, autoHover, back, clearIntervalMini, closeFullScreen, fullScreen, full_screen, id, menu, menu_off, menu_toggle, next, numberNextSlide, options, parse_col, parse_row, parse_slide, pause, print, rewind, rewind_pause, rewind_play, run, run_language, setI, slider, time;
+var $, Close_full_screen, Font_size, Full_screen, Lang_toggle, Language_active, Theme_dark, Theme_lite, allSlides, allSlidesLength, autoHover, back, clearIntervalMini, closeFullScreen, download_voice, fullScreen, full_screen, id, menu, menu_off, menu_toggle, next, numberNextSlide, options, parse_col, parse_row, parse_slide, pause, print, rewind, rewind_pause, rewind_play, run, run_language, setI, slider, time;
 
 $ = function(selector) {
   return document.querySelectorAll(selector);
@@ -172,6 +172,16 @@ next = function() {
   }
 };
 
+download_voice = function(numberSlideVoice) {
+  var numberSlideVoiceNext;
+  load_voice(allSlides[numberSlideVoice].slide.voice);
+  numberSlideVoiceNext = numberSlideVoice;
+  numberSlideVoiceNext++;
+  if (numberSlideVoiceNext < allSlidesLength) {
+    return load_voice(allSlides[numberSlideVoiceNext].slide.voice);
+  }
+};
+
 run = function(number) {
   console.log(number);
   number++;
@@ -187,8 +197,15 @@ run = function(number) {
       clearIntervalMini();
       // console.log allSlides[numberNextSlide].slide.time
       parse_slide(allSlides[numberNextSlide].slide.see);
-      print(allSlides[numberNextSlide].slide.code);
-      return autoHover(numberNextSlide);
+      autoHover(numberNextSlide);
+      if (this_voice) {
+        this_voice.stop();
+      }
+      gEval('this_voice = ' + allSlides[numberNextSlide].slide.voice);
+      if (this_voice) {
+        this_voice.play();
+      }
+      download_voice(numberNextSlide);
     }
   }
 };
@@ -203,7 +220,10 @@ back = function() {
 pause = function() {
   clearInterval(setI);
   rewind_pause.style.display = 'none';
-  return rewind_play.style.display = 'block';
+  rewind_play.style.display = 'block';
+  if (this_voice) {
+    return this_voice.stop();
+  }
 };
 
 autoHover = function(number) {
@@ -368,8 +388,6 @@ Font_size = function(size) {
   f_size = id('html').style.fontSize;
   f_size = f_size.substring(0, 2);
   font_size = +f_size + size;
-  // console.log +f_size + size
-  // console.log size + f_size
   id('html').style.fontSize = font_size + 'px';
   return id('Font_size_data').innerHTML = id('html').style.fontSize;
 };
