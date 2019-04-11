@@ -5,7 +5,6 @@ language_HTML = [
 			}
 		]
 		time: 5000
-		voice: 'sound.mp3'
 	}
 	{slide:
 		see: [
@@ -18,22 +17,19 @@ language_HTML = [
 				]}
 			]}
 		]
-		time: 3000
+		voice: 'EN_HTML_html'
+		time: 5000
 		code: code1
-		voice: 'sound.mp3'
 	}
 	{slide:
 		see: [
 			{col: [
 				{line: [
-					{comment: '<!-- comment -->'}
-				]}
-				{line: [
 					{tag: '<div '}
 					{attribute_name: 'class='}
 					{attribute_value: '"className"'}
 					{tag: ' >'}
-					{text: 'tag content'}
+					{text: 'text'}
 					{tag: '</div> '}
 				]}
 				{line: [
@@ -49,22 +45,28 @@ language_HTML = [
 					{text: ' - attribute '}
 				]}
 				{line: [
-					{text: 'tag content'}
+					{text: 'text'}
 					{text: ' - content '}
-				]}
-				{line: [
-					{comment: '<!-- -->'}
-					{text: ' - comment (invisible on the web site)'}
 				]}
 				{line: [
 					{html: '<a class="button" href="http://">Open in CodePen</a>'}
 				]}
 			]}
 		]
-		time: 4000
+		voice: 'EN_HTML_tag_attribute'
+		time: 11000
 		code: code1
-		voice: 'sound.mp3'
+	}
+	{slide:
+		see: [
+			{col: [
+				{line: [
+					{'h1 text': 'This projekt in developing'}
+				]}
+			]}
+		]
+		time: 3000
+		code: code1
 	}
 ]
-
 

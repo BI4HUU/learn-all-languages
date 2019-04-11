@@ -76,6 +76,18 @@ language_CSS = [
 		time: 4000
 		voice: 'sound.mp3'
 	}
+	{slide:
+		see: [
+			{col: [
+				{line: [
+					{'h1 text': 'This site in developing'}
+				]}
+			]}
+		]
+		time: 3000
+		code: code1
+		voice: 'sound.mp3'
+	}
 ]
 
 

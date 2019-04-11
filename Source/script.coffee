@@ -115,6 +115,13 @@ next = () ->
 		numberNextSlide++
 		run()
 
+download_voice = (numberSlideVoice) ->
+	load_voice(allSlides[numberSlideVoice].slide.voice)
+	numberSlideVoiceNext = numberSlideVoice
+	numberSlideVoiceNext++
+	if numberSlideVoiceNext < allSlidesLength
+		load_voice(allSlides[numberSlideVoiceNext].slide.voice)
+
 run = (number) ->
 	console.log number
 	number++
@@ -129,8 +136,16 @@ run = (number) ->
 			clearIntervalMini()
 			# console.log allSlides[numberNextSlide].slide.time
 			parse_slide allSlides[numberNextSlide].slide.see
-			print allSlides[numberNextSlide].slide.code
 			autoHover numberNextSlide
+			if this_voice
+				this_voice.stop()
+			gEval('this_voice = ' + allSlides[numberNextSlide].slide.voice)
+			if this_voice
+				this_voice.play()
+			download_voice numberNextSlide
+			return
+
+
 back = () ->
 	if numberNextSlide > 0
 		numberNextSlide--
@@ -140,6 +155,8 @@ pause = () ->
 	clearInterval setI
 	rewind_pause.style.display = 'none'
 	rewind_play.style.display = 'block'
+	if this_voice
+		this_voice.stop()
 
 autoHover = (number) ->
 	i_rewind = 0
@@ -267,8 +284,6 @@ Font_size = (size) ->
 	f_size = id('html').style.fontSize
 	f_size = f_size.substring(0, 2)
 	font_size = +f_size + size
-	# console.log +f_size + size
-	# console.log size + f_size
 	id('html').style.fontSize = font_size+'px'
 	id('Font_size_data').innerHTML = id('html').style.fontSize
 Font_size()
