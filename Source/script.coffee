@@ -14,6 +14,7 @@ print = (data) ->
 menu = id 'menu'
 full_screen = id 'full_screen'
 options = id 'options'
+lang_name_mod_var = 'RU'
 menu_toggle = () ->
 	menu.classList.toggle 'see'
 	return
@@ -24,12 +25,12 @@ Theme_dark = () ->
 	full_screen.classList.add 'Theme_dark'
 	id('Light').classList.remove 'menu_item_active'
 	id('Dark').classList.add 'menu_item_active'
+Theme_dark()
 Theme_lite = () ->
 	full_screen.classList.remove 'Theme_dark'
 	full_screen.classList.add 'Theme_lite'
 	id('Dark').classList.remove 'menu_item_active'
 	id('Light').classList.add 'menu_item_active'
-Theme_dark()
 #############################################
 # CORE
 #############################################
@@ -50,12 +51,16 @@ clearIntervalMini = () ->
 	setI = setInterval(	() ->
 		next()
 	time)
-	console.log time
 ######################################
+
 run_language = (language) ->
+	#gEval('language = ' + lang + '_' + lang_mod_var)
 	numberNextSlide = -1
 	allSlides = language
 	allSlidesLength = language.length
+	globalStyle = document.createElement('style');
+	globalStyle.innerHTML = allSlides[0].slide.globalStyle
+	menu.appendChild globalStyle
 	time = 88
 	id('rewind').innerHTML = ''
 	clearIntervalMini()
@@ -79,7 +84,10 @@ parse_slide = (arr) ->
 			slider.appendChild parse_col val, DOM_slide
 		if Object.keys(val)[0] == 'line'
 			slider.appendChild parse_row val, DOM_slide
+		else 
+			slider.appendChild parse_only val, DOM_slide
 	return
+
 parse_col = (obj, DOM_slide) ->
 	for key, val of obj
 		for val2 in val
@@ -105,6 +113,12 @@ parse_row = (arr_obj, DOM_col) ->
 					DOM_col.appendChild div
 	return DOM_col
 
+parse_only = (obj, DOM_slide) ->
+	for key, val of obj
+		DOM_col = document.createElement 'div'
+		DOM_col.setAttribute 'class', Object.keys(key)[0]
+	return DOM_slide
+
 ######################################
 
 
@@ -123,7 +137,6 @@ download_voice = (numberSlideVoice) ->
 		load_voice(allSlides[numberSlideVoiceNext].slide.voice)
 
 run = (number) ->
-	console.log number
 	number++
 	if number
 		number--
@@ -137,12 +150,15 @@ run = (number) ->
 			# console.log allSlides[numberNextSlide].slide.time
 			parse_slide allSlides[numberNextSlide].slide.see
 			autoHover numberNextSlide
+			download_voice numberNextSlide
 			if this_voice
 				this_voice.stop()
 			gEval('this_voice = ' + allSlides[numberNextSlide].slide.voice)
 			if this_voice
-				this_voice.play()
-			download_voice numberNextSlide
+				setTimeout(
+					() => this_voice.play(),
+					1000
+				)
 			return
 
 
@@ -176,6 +192,7 @@ Language_active = (lang) ->
 	$('.Language_item')[4].classList.remove('menu_item_active')
 	$('.Language_item')[5].classList.remove('menu_item_active')
 	id(lang).classList.add 'menu_item_active'
+
 Full_screen = () ->
 	fullScreen.style.display = 'none'
 	closeFullScreen.style.display = 'block'
@@ -239,7 +256,7 @@ Lang_toggle = (Lang) ->
 		Author: '作者'
 		Light: '光'
 		Dark: '黑'
-
+	lang_name_mod_var = Lang
 	Lang_apply = (obj) ->
 		for key, val of obj
 			id(key).innerHTML = val
@@ -287,5 +304,4 @@ Font_size = (size) ->
 	id('html').style.fontSize = font_size+'px'
 	id('Font_size_data').innerHTML = id('html').style.fontSize
 Font_size()
-
 

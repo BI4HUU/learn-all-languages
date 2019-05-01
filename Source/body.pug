@@ -8,7 +8,7 @@
 			.menu_item.Lang_item#SPA(onclick='Lang_toggle("SPA")') Español
 		.menu_item.menu_item_header#Language Language
 		.menu_item_wrap
-			.menu_item.Language_item#language_HTML.accent(onclick='run_language(language_HTML); Language_active(this.id)') HTML
+			.menu_item.Language_item#language_HTML.accent(onclick='load_lang("HTML"); Language_active(this.id)') HTML
 			.menu_item.Language_item#language_CSS(onclick='run_language(language_CSS); Language_active(this.id)') CSS
 		.menu_item_wrap
 			.menu_item.Language_item#language_JS(onclick='run_language(language_JS); Language_active(this.id)') JS
@@ -28,7 +28,7 @@
 		.menu_item.menu_item_header#Support Support
 		.menu_item#Author Author
 
-	#body_wrap.container(onclick='menu_off()')
+	#body_wrap.container-fluid(onclick='menu_off()')
 		#body
 			//- .col
 			//- 	.line
