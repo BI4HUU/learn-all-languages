@@ -77,15 +77,18 @@ parse_slide = (arr) ->
 	for val in arr
 		DOM_slide = document.createElement 'div'
 		DOM_slide.setAttribute 'class', Object.keys(val)[0]
-		if Object.keys(val)[0] == 'html'
+		if Object.keys(val)[0].indexOf('html') > -1
 			DOM_slide.innerHTML = val.html
 			slider.appendChild DOM_slide
-		if Object.keys(val)[0] == 'col'
+		if Object.keys(val)[0].indexOf('col') > -1
 			slider.appendChild parse_col val, DOM_slide
-		if Object.keys(val)[0] == 'line'
+		if Object.keys(val)[0].indexOf('block') > -1
+			slider.appendChild parse_col val, DOM_slide
+		if Object.keys(val)[0].indexOf('line') > -1
 			slider.appendChild parse_row val, DOM_slide
 		else 
 			slider.appendChild parse_only val, DOM_slide
+	Test()
 	return
 
 parse_col = (obj, DOM_slide) ->
@@ -157,7 +160,7 @@ run = (number) ->
 			if this_voice
 				setTimeout(
 					() => this_voice.play(),
-					1000
+					500
 				)
 			return
 
@@ -232,6 +235,7 @@ Lang_toggle = (Lang) ->
 		Author: 'Author'
 		Light: 'Light'
 		Dark: 'Dark'
+		Font: 'Font'
 	RU =
 		Language: 'Язык'
 		Theme: 'Тема'
@@ -240,6 +244,7 @@ Lang_toggle = (Lang) ->
 		Author: 'Автор'
 		Light: 'Светлая'
 		Dark: 'Темная'
+		Font: 'Шрифт'
 	SPA =
 		Language: 'Idioma'
 		Theme: 'Tema'
@@ -248,6 +253,7 @@ Lang_toggle = (Lang) ->
 		Author: 'Autor'
 		Light: 'Ligero'
 		Dark: 'Oscuro'
+		Font: 'Fuente'
 	ZHO =
 		Language: '语言'
 		Theme: '主题'
@@ -256,6 +262,7 @@ Lang_toggle = (Lang) ->
 		Author: '作者'
 		Light: '光'
 		Dark: '黑'
+		Font: '字形'
 	lang_name_mod_var = Lang
 	Lang_apply = (obj) ->
 		for key, val of obj
@@ -305,3 +312,10 @@ Font_size = (size) ->
 	id('Font_size_data').innerHTML = id('html').style.fontSize
 Font_size()
 
+Test2 = () ->
+	correctlys = document.querySelectorAll('.correctly')
+	wrongs = document.querySelectorAll('.wrong')
+	for correctly in correctlys
+		correctly.addEventListener('click', correctly_func)
+	for wrong in wrongs
+		wrong.addEventListener('click', wrong_func)
