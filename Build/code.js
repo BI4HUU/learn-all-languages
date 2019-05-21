@@ -13,6 +13,29 @@ const HTML_RU_code2 = `<html>
         <div>Привет мир</div>
     </body>
 </html>`
+const HTML_RU_code3 = `<html>
+	<head>
+		<title>Практика</title>
+	</head>
+	<body>
+		<nav>
+			<a href="#">Главна</a>	
+			<a href="#">Продукты</a>	
+			<a href="#">О нас</a>	
+		</nav>
+		<hr>
+		<h1>Ну очень простой сайт</h1>
+		<p>Для более красивого дизайна нужно изучить CSS.</p>
+		<p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.</p>
+		<a href="#">Ссылка на другую страницу</a>	
+	</body>
+</html>`
+const supportSlide = [{'html m-auto': `<div class="mt-5 h-50" id="supportHistory">Sorry support, authorization in development...</div>
+    <input type="text" class="form-control mt-2" id="supportInput" placeholder="Your question">
+    <style>.Theme_dark #supportInput { background: #000; color: #fff; }#supportInput, #supportHistory{margin: auto}<style>`}]
+const accountSlide = [{'html m-auto mt-5': `Sorry account in development...`}]
+const downloadSlide = [{'html m-auto mt-5': `Sorry download in development...<br><a href="https://github.com/BI4HUU/learn-all-languages">github</a>`}]
+const authorSlide = [{'html m-auto mt-5': `BI4HUU`}]
 var language = false
 var lang_name = false
 var gEval = eval;
@@ -60,16 +83,11 @@ function copyCode() {
     navigator.clipboard.writeText(allSlides[numberNextSlide].slide.copyCode)
  }
 
-function fontFamily(fontFamily) {
-    
-}
 let fontInput = document.getElementById('FontInput');
 fontInput.oninput = function() {
     slider.style.fontFamily = fontInput.value
     print(fontInput.value)
 }
-
-
 
 
 
