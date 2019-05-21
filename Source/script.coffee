@@ -78,7 +78,7 @@ parse_slide = (arr) ->
 		DOM_slide = document.createElement 'div'
 		DOM_slide.setAttribute 'class', Object.keys(val)[0]
 		if Object.keys(val)[0].indexOf('html') > -1
-			DOM_slide.innerHTML = val.html
+			DOM_slide.innerHTML = val[Object.keys(val)[0]]
 			slider.appendChild DOM_slide
 		if Object.keys(val)[0].indexOf('col') > -1
 			slider.appendChild parse_col val, DOM_slide
@@ -230,39 +230,47 @@ Lang_toggle = (Lang) ->
 	EN =
 		Language: 'Language'
 		Theme: 'Theme'
+		Light: 'Light'
+		Dark: 'Dark'
+		Download: 'Download'
 		Font_size: 'Font size'
 		Support: 'Support'
 		Author: 'Author'
-		Light: 'Light'
-		Dark: 'Dark'
 		Font: 'Font'
+		Account: 'Account'
 	RU =
 		Language: 'Язык'
 		Theme: 'Тема'
 		Font_size: 'Размер шрифта'
-		Support: 'Поддержка'
-		Author: 'Автор'
 		Light: 'Светлая'
 		Dark: 'Темная'
 		Font: 'Шрифт'
+		Download: 'Скачать'
+		Support: 'Поддержка'
+		Author: 'Автор'
+		Account: 'Аккаунт'
 	SPA =
 		Language: 'Idioma'
 		Theme: 'Tema'
 		Font_size: 'Tamaño de fuente'
-		Support: 'Apoyo'
-		Author: 'Autor'
 		Light: 'Ligero'
 		Dark: 'Oscuro'
+		Download: 'Descargar'
+		Support: 'Apoyo'
+		Author: 'Autor'
 		Font: 'Fuente'
+		Account: 'Cuenta'
 	ZHO =
 		Language: '语言'
 		Theme: '主题'
-		Font_size: '字体大小'
-		Support: '支持'
-		Author: '作者'
 		Light: '光'
 		Dark: '黑'
+		Font_size: '字体大小'
+		Download: '下載'
+		Support: '支持'
+		Author: '作者'
 		Font: '字形'
+		Account: '帳戶'
 	lang_name_mod_var = Lang
 	Lang_apply = (obj) ->
 		for key, val of obj
