@@ -1,0 +1,13 @@
+# CSOM - Coffe Script Object Modified
+
+key:
+	key: `data`
+	key: `data`
+
+# { key: {
+# 		key: `data`,
+# 		key: `data`
+# 	}
+# }
+# Задача написать парсер который будет парсить CSOM аналогично как 'for of', 'map'... в js.
+
