@@ -54,7 +54,7 @@ clearIntervalMini = () ->
 ######################################
 
 run_language = (language) ->
-	#gEval('language = ' + lang + '_' + lang_mod_var)
+	print language
 	numberNextSlide = -1
 	allSlides = language
 	allSlidesLength = language.length

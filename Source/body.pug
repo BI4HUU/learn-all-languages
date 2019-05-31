@@ -28,10 +28,10 @@
 		.menu_item.menu_item_header#Font Font
 		.menu_item_wrap
 			input.menu_item#FontInput(placeholder='')
-		.menu_item#Download(onclick='parse_slide(downloadSlide)') Download 
-		.menu_item#Support(onclick='parse_slide(supportSlide)') Support 
-		.menu_item#Author(onclick='parse_slide(authorSlide)') Author
-		.menu_item#Account(onclick='parse_slide(accountSlide)') Account
+		.menu_item#Download(onclick='parse_slide(downloadSlide); pause()') Download 
+		.menu_item#Support(onclick='parse_slide(supportSlide); pause()') Support 
+		.menu_item#Author(onclick='parse_slide(authorSlide); pause()') Author
+		.menu_item#Account(onclick='parse_slide(accountSlide); pause()') Account
 
 	#body_wrap.container-fluid(onclick='menu_off()')
 		#body(style='font-family: "Arial";')
