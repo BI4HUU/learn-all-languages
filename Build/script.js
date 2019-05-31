@@ -83,7 +83,7 @@ clearIntervalMini = function() {
 //#####################################
 run_language = function(language) {
   var button_rewind, globalStyle, i_b_r, key, results, val;
-  //gEval('language = ' + lang + '_' + lang_mod_var)
+  print(language);
   numberNextSlide = -1;
   allSlides = language;
   allSlidesLength = language.length;

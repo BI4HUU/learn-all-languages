@@ -51,7 +51,7 @@ var this_voice = false
 
 function load_lang(lang_name_noMod) {
     lang_name = `${lang_name_noMod}_${lang_name_mod_var}`
-    gEval(`if (typeof ${lang_name} == "undefined") {load_lang2 ("${lang_name}")}`)
+    gEval(`if (typeof ${lang_name} == "undefined") {load_lang2 ("${lang_name}")} else {run_language (${lang_name})}`)
 }
 
 function load_lang2 (lang_name) {

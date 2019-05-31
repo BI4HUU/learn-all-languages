@@ -271,30 +271,96 @@
 },
 //   /\ Теги верхнего уровня
 //   \/ Теги заголовка документа
-// {
-//     slide: {
-//         see: [{
-//             col: [{
-//                 line: [{
-//                     'h1 text': 'Теги заголовка документа'
-//                 }]
-//             }, {
-//                 line: [{
-//                     tag: '<html></html>'
-//                 }]
-//             }, {
-//                 line: [{
-//                     tag: '<head></head>'
-//                 }]
-//             }, {
-//                 line: [{
-//                     tag: '<body></body>'
-//                 }]
-//             }]
-//         }],
-//         time: 6000
-//     }
-// },
+{
+    slide: {
+        see: [{
+            col: [{
+                line: [{
+                    'h1 text': 'Теги заголовка документа'
+                }]
+            }, {
+                line: [{
+                    tag: '<head>'
+                }]
+            }, {
+                line: [{
+                    tag: '    <title>'
+                }, {
+                    text: 'title'
+                }, {
+                    tag: '</title>'
+                }]
+            }, {
+                line: [{
+                    tag: '    <meta '
+                }, {
+                    attribute_name: 'charset='
+                }, {
+                    attribute_value: '"utf-8"'
+                }, {
+                    tag: '>'
+                }]
+            }, {
+                line: [{
+                    tag: '    <meta '
+                }, {
+                    attribute_name: 'name='
+                }, {
+                    attribute_value: '"description" '
+                }, {
+                    attribute_name: 'content='
+                }, {
+                    attribute_value: '"описания веб-страницы"'
+                }, {
+                    tag: '>'
+                }]
+            }, {
+                line: [{
+                    tag: '    <meta '
+                }, {
+                    attribute_name: 'name='
+                }, {
+                    attribute_value: '"keywords" '
+                }, {
+                    attribute_name: 'content='
+                }, {
+                    attribute_value: '"ключевые слова для поисковых систем"'
+                }, {
+                    tag: '>'
+                }]
+            }, {
+                line: [{
+                    tag: '    <link '
+                }, {
+                    attribute_name: 'rel='
+                }, {
+                    attribute_value: '"stylesheet" '
+                }, {
+                    attribute_name: 'href='
+                }, {
+                    attribute_value: '"style.css"'
+                }, {
+                    tag: '>'
+                }]
+            }, {
+                line: [{
+                    tag: '</head>'
+                }]
+            }, {
+                line: [{
+                    comment: 'Где'
+                }]
+            }, {
+                line: [{
+                    tag: '<link>'
+                }, {
+                    text: ' - Определяет отношения между документом и внешним ресурсом. Также используется для подключения внешних таблиц стилей и кода'
+                }]
+            }]
+        }],
+        time: 6000
+    }
+},
 //   /\ Теги заголовка документа   8888888888888888888888888888888888888888888888888888
 
 //   \/ Test correctly wrong   8888888888888888888888888888888888888888888888888888
@@ -307,7 +373,7 @@
                 }]
             }, {
                 line: [{
-                    'text': 'Выберите правыльную разметку'
+                    'text': 'Выберите правильную разметку'
                 }]
             }]
         }, {
