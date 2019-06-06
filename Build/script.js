@@ -1,7 +1,7 @@
 //############################################
 // JQuery
 //############################################
-var $, Close_full_screen, Font_size, Full_screen, Lang_toggle, Language_active, Test2, Theme_dark, Theme_lite, allSlides, allSlidesLength, autoHover, back, clearIntervalMini, closeFullScreen, download_voice, fullScreen, full_screen, id, lang_name_mod_var, menu, menu_off, menu_toggle, next, numberNextSlide, options, parse_col, parse_only, parse_row, parse_slide, pause, print, rewind, rewind_pause, rewind_play, run, run_language, setI, slider, time;
+var $, Close_full_screen, Font_size, Full_screen, Lang_toggle, Language_active, Test2, Theme_dark, Theme_lite, allSlides, allSlidesLength, autoHover, back, clearIntervalMini, closeFullScreen, download_voice, fullScreen, full_screen, id, lang_name_mod_var, menu, menu_off, menu_toggle, next, numberNextSlide, options, parse_array, parse_col, parse_only, parse_row, parse_slide, pause, print, rewind, rewind_pause, rewind_play, run, run_language, setI, slider, time;
 
 $ = function(selector) {
   return document.querySelectorAll(selector);
@@ -81,14 +81,14 @@ clearIntervalMini = function() {
 };
 
 //#####################################
-run_language = function(language) {
-  var button_rewind, globalStyle, i_b_r, key, results, val;
-  print(language);
+run_language = function(langCSOM) {
+  var button_rewind, globalStyle, i_b_r, key, language, results, val;
+  language = SlidesParser(langCSOM);
   numberNextSlide = -1;
   allSlides = language;
   allSlidesLength = language.length;
   globalStyle = document.createElement('style');
-  globalStyle.innerHTML = allSlides[0].slide.globalStyle;
+  globalStyle.innerHTML = allSlides[0].globalStyle;
   menu.appendChild(globalStyle);
   time = 88;
   id('rewind').innerHTML = '';
@@ -163,7 +163,11 @@ parse_row = function(arr_obj, DOM_col) {
         } else {
           div = document.createElement('div');
           div.setAttribute('class', key);
-          div.textContent = val;
+          if (typeof val === 'object') {
+            div.appendChild = parse_array(val, div);
+          } else {
+            div.textContent = val;
+          }
           DOM_col.appendChild(div);
         }
       }
@@ -182,6 +186,21 @@ parse_only = function(obj, DOM_slide) {
   return DOM_slide;
 };
 
+parse_array = function(arr, DOM_slide) {
+  var DOM_div, i, key, len, obj, val;
+  for (i = 0, len = arr.length; i < len; i++) {
+    obj = arr[i];
+    for (key in obj) {
+      val = obj[key];
+      DOM_div = document.createElement('div');
+      DOM_div.setAttribute('class', key);
+      DOM_div.textContent = val;
+      DOM_slide.appendChild(DOM_div);
+    }
+  }
+  return DOM_slide;
+};
+
 //#####################################
 next = function() {
   var allSlidesLength__;
@@ -195,11 +214,11 @@ next = function() {
 
 download_voice = function(numberSlideVoice) {
   var numberSlideVoiceNext;
-  load_voice(allSlides[numberSlideVoice].slide.voice);
+  load_voice(allSlides[numberSlideVoice].voice);
   numberSlideVoiceNext = numberSlideVoice;
   numberSlideVoiceNext++;
   if (numberSlideVoiceNext < allSlidesLength) {
-    return load_voice(allSlides[numberSlideVoiceNext].slide.voice);
+    return load_voice(allSlides[numberSlideVoiceNext].voice);
   }
 };
 
@@ -213,16 +232,15 @@ run = function(number) {
     if (numberNextSlide >= 0) {
       rewind_play.style.display = 'none';
       rewind_pause.style.display = 'block';
-      time = allSlides[numberNextSlide].slide.time;
+      time = allSlides[numberNextSlide].time;
       clearIntervalMini();
-      // console.log allSlides[numberNextSlide].slide.time
-      parse_slide(allSlides[numberNextSlide].slide.see);
+      parse_slide(allSlides[numberNextSlide].see);
       autoHover(numberNextSlide);
       download_voice(numberNextSlide);
       if (this_voice) {
         this_voice.stop();
       }
-      gEval('this_voice = ' + allSlides[numberNextSlide].slide.voice);
+      gEval('this_voice = ' + allSlides[numberNextSlide].voice);
       if (this_voice) {
         setTimeout(() => {
           return this_voice.play();

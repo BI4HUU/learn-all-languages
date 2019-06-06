@@ -1,0 +1,32 @@
+`slide: 
+	see:
+		html: <div onclick="run(1)" class="text a pointer">Основы</div><div onclick="run(6)" class="text a pointer">Тести</div><div onclick = "run(6)" class="text a pointer" >Практика</div>
+	time: 4000
+	globalStyle: .attribute_name{color: #8ef}.tag{color: #27e;}.attribute_value{color: #f06500;}
+slide:
+	see:
+		line: 
+			h2 text:
+				h3 text: HTML - (HyperText Markup Language) - Язык гипертекстовой разметки
+		line: 
+			text: Является стандартным языком разметки для создания веб-страниц и веб-приложений.
+	voice: HTML_RU_html
+	time: 18000
+slide:
+	see:
+		col:
+			line: 
+				h2 text: Hello World
+			line: 
+				text: 	В редакторе текста или кода (Sublime Text, Visual Studio Code ...) нажмите "Файл" > "Создать новый файл", напишите код.
+			line: 
+				html: <a class="button" href="http://">Open in CodePen</a>
+			line: 
+				tag: <html>
+			line: 
+				tag: </html>
+			line: 
+				text: 	Нажмите "Файл" > "Сохранить как...".
+	voice: HTML_RU_Hello_World
+	time: 6000
+slideEnd`
