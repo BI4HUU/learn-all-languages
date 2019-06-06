@@ -53,13 +53,13 @@ clearIntervalMini = () ->
 	time)
 ######################################
 
-run_language = (language) ->
-	print language
+run_language = (langCSOM) ->
+	language = SlidesParser langCSOM
 	numberNextSlide = -1
 	allSlides = language
 	allSlidesLength = language.length
 	globalStyle = document.createElement('style');
-	globalStyle.innerHTML = allSlides[0].slide.globalStyle
+	globalStyle.innerHTML = allSlides[0].globalStyle
 	menu.appendChild globalStyle
 	time = 88
 	id('rewind').innerHTML = ''
@@ -112,7 +112,10 @@ parse_row = (arr_obj, DOM_col) ->
 				else
 					div = document.createElement 'div'
 					div.setAttribute 'class', key
-					div.textContent = val
+					if typeof val == 'object'
+						div.appendChild = parse_array(val, div)
+					else
+						div.textContent = val
 					DOM_col.appendChild div
 	return DOM_col
 
@@ -120,6 +123,15 @@ parse_only = (obj, DOM_slide) ->
 	for key, val of obj
 		DOM_col = document.createElement 'div'
 		DOM_col.setAttribute 'class', Object.keys(key)[0]
+	return DOM_slide
+
+parse_array = (arr, DOM_slide) ->
+	for obj in arr
+		for key, val of obj
+			DOM_div = document.createElement 'div'
+			DOM_div.setAttribute 'class', key
+			DOM_div.textContent = val
+			DOM_slide.appendChild DOM_div
 	return DOM_slide
 
 ######################################
@@ -133,11 +145,11 @@ next = () ->
 		run()
 
 download_voice = (numberSlideVoice) ->
-	load_voice(allSlides[numberSlideVoice].slide.voice)
+	load_voice(allSlides[numberSlideVoice].voice)
 	numberSlideVoiceNext = numberSlideVoice
 	numberSlideVoiceNext++
 	if numberSlideVoiceNext < allSlidesLength
-		load_voice(allSlides[numberSlideVoiceNext].slide.voice)
+		load_voice(allSlides[numberSlideVoiceNext].voice)
 
 run = (number) ->
 	number++
@@ -148,15 +160,14 @@ run = (number) ->
 		if numberNextSlide >= 0
 			rewind_play.style.display = 'none'
 			rewind_pause.style.display = 'block'
-			time = allSlides[numberNextSlide].slide.time 
+			time = allSlides[numberNextSlide].time 
 			clearIntervalMini()
-			# console.log allSlides[numberNextSlide].slide.time
-			parse_slide allSlides[numberNextSlide].slide.see
+			parse_slide allSlides[numberNextSlide].see
 			autoHover numberNextSlide
 			download_voice numberNextSlide
 			if this_voice
 				this_voice.stop()
-			gEval('this_voice = ' + allSlides[numberNextSlide].slide.voice)
+			gEval('this_voice = ' + allSlides[numberNextSlide].voice)
 			if this_voice
 				setTimeout(
 					() => this_voice.play(),
