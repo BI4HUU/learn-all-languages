@@ -1,0 +1,66 @@
+`slide: 
+	see:
+		h1 text line: HTML & CSS
+		h3 text line: HTML
+		html line: <div onclick="run(1)" class="text a pointer">Основы</div>
+		html line: <div onclick = "run(4)" class="text a pointer">Текст</div>
+		html line: <div onclick = "run(7)" class="text a pointer"></div>
+		html line: <div onclick = "run(9)" class="text a pointer"></div>
+		html line: <div onclick = "run(9)" class="text a pointer"></div>
+		html line: <div onclick = "run(8)" class="text a pointer">Тести</div>
+		html line: <div onclick = "run(9)" class="text a pointer">Практика</div>
+	time: 4000
+	globalStyle: .attribute_name{color: #8ef}.tag{color: #27e;}.attribute_value{color: #f06500;}
+slide:
+	see:
+		h1 text line: Java Script
+		text line: JS - это легковесный, интерпретируемый или JIT-компилируемый, объектно-ориентированный язык с функциями первого класса. Наиболее широкое применение находит как язык сценариев веб-страниц, но также используется и в других программных продуктах, например, node.js или Apache CouchDB. JavaScript это прототипно-ориентированный, мультипарадигменный язык с динамической типизацией, который поддерживает объектно-ориентированный, императивный и декларативный (например, функциональное программирование) стили программирования.
+	voice: HTML_RU_Hello_World
+	time: 6000
+slide:
+	see:
+		h1 text line: Hello World
+		text line: В редакторе текста или кода (Sublime Text, Visual Studio Code ...) нажмите "Файл" > "Создать новый файл", напишите код.
+		html line: <a class="button" href="http://">Open in CodePen</a><div class="button" onclick="copyCode()" >Copy code</div>
+		code w-100:
+			tag: <html>
+			tag: 	<body>
+			text: 		Привет мир
+			tag: 	</body>
+			tag: </html>
+		text w-100: Нажмите "Файл" > "Сохранить как...", выберите папку, имя файла - "Hello world.html", нажмите "Сохранить", откройте файл в браузере.
+	copyCode: <html>\\n	<head>
+	voice: HTML_RU_Hello_World
+	time: 12000U_Hello_World
+	time: 6000
+slide:
+	see:
+		h1 text: Cовет.
+		line text: Для более быстрого написания кода используйте плагин "EMMET".
+	voice: HTML_RU_Hello_World
+	time: 6000
+slide:
+	see:
+		h1 text: Полезные ссылки.
+		line html: <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript">"Mozilla Developer N web docs" - Веб документация.</a>
+		line html: <a href="https://html5book.ru/">"HTML5 BOOK" - Учебник</a>
+		line html: <a href="http://htmlbook.ru/">"HTML book" - Учебник</a>
+		line html: <a href="https://codebra.ru/">"CODEBRA" - Учебник с практикой</a>
+		line html: <a href="www.cyberforum.ru/">"CyberForum" - Форум</a>
+		line html: <a href="https://ru.stackoverflow.com/">"StackOverflow" - Форум</a>
+		line html: <a href="http://programmersforum.ru/">"Клуб ПРОграммистов" - Форум</a>
+		line html: <a href="http://forum.vingrad.ru/">"VINGRAD" - Форум</a>
+		line html: <a href="http://www.html.by/">"HTML" - Форум</a>
+	voice: HTML_RU_Hello_World
+	time: 6000
+slide:
+	see:
+		col:
+			line:
+				tag: <body>
+				attribute_name: class=
+				attribute_value: "className"
+				text: текст
+		w-100:
+	voice: HTML_RU_Hello_World
+	time: 6000`
