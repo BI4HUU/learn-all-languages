@@ -8,14 +8,15 @@
 			.menu_item.Lang_item#SPA(onclick='Lang_toggle("SPA")') Español
 		.menu_item.menu_item_header#Language Language
 		.menu_item_wrap
-			.menu_item.Language_item#language_HTML.accent(onclick='load_lang("HTML"); Language_active(this.id)') HTML
-			.menu_item.Language_item#language_CSS(onclick='run_language(language_CSS); Language_active(this.id)') CSS
+			.menu_item.Language_item#language_HTML.accent(onclick='load_lang("HTML"); Language_active(this.id)') HTML & CSS
 		.menu_item_wrap
-			.menu_item.Language_item#language_JS(onclick='run_language(language_JS); Language_active(this.id)') JS
-			.menu_item.Language_item#language_PYTON(onclick='run_language(language_PYTON); Language_active(this.id)') PYTON
+			.menu_item.Language_item#language_JS(onclick='load_lang("JS"); Language_active(this.id)') JS
+			.menu_item.Language_item#language_PYTON(onclick='load_lang(PYTON); Language_active(this.id)') PYTON
 		.menu_item_wrap
-			.menu_item.Language_item#language_JAVA(onclick='run_language(language_JAVA); Language_active(this.id)') JAVA
-			.menu_item.Language_item#language_C_sharp(onclick='run_language(language_C_sharp); Language_active(this.id)') C#
+			.menu_item.Language_item#language_JAVA(onclick='load_lang("JAVA"); Language_active(this.id)') JAVA
+			.menu_item.Language_item#language_C_sharp(onclick='run_language("C_sharp"); Language_active(this.id)') C#
+		.menu_item_wrap
+			.menu_item.Language_item#language_NeuralNetworks(onclick='load_lang("NeuralNetworks"); Language_active(this.id)') Neural networks
 		.menu_item.menu_item_header#Theme Theme
 		.menu_item_wrap
 			.menu_item#Light(onclick='Theme_lite()') Light
@@ -38,9 +39,8 @@
 			.card
 				.card-body
 					.card-title.h1 WEB
-					.card-text.menu_item.Language_item#language_HTML(onclick='load_lang("HTML"); Language_active(this.id)') HTML
-					.card-text.menu_item.Language_item#language_HTML(onclick='load_lang("HTML"); Language_active(this.id)') CSS
-					.card-text.menu_item.Language_item#language_HTML(onclick='load_lang("HTML"); Language_active(this.id)') JS
+					.card-text.menu_item.Language_item#language_HTML(onclick='load_lang("HTML"); Language_active(this.id)') HTML & CSS
+					.card-text.menu_item.Language_item#language_JS(onclick='load_lang("JS"); Language_active(this.id)') JS
 					.card-text.menu_item.Language_item#language_HTML(onclick='load_lang("HTML"); Language_active(this.id)') VUE
 			//- 		.text(onclick='run_language(language_CSS)') CSS
 			//- .card
