@@ -80,15 +80,14 @@ function Test() {
 	},200)
 }
 function copyCode() {
-	navigator.clipboard.writeText(allSlides[numberNextSlide].slide.copyCode)
+	navigator.clipboard.writeText(allSlides[numberNextSlide].copyCode)
  }
-
+console.log('Привет мир')
 let fontInput = document.getElementById('FontInput');
 fontInput.oninput = function() {
 	slider.style.fontFamily = fontInput.value
-	print(fontInput.value)
+	localStorage.fontFamily = fontInput.value
 }
-
 function SlidesParser(SlidesStr) {
 	let a = SlidesStr
 	c = a.split(/\n/)
@@ -160,7 +159,7 @@ function SlidesParser(SlidesStr) {
 						let doubleDotLvl2 = strArrAll[i3+koef][1].indexOf(':')
 						let strLineLvl2 = {}
 						strLineLvl2[strArrAll[i3+koef][1].slice(0, doubleDotLvl2)] = strArrAll[i3+koef][1].slice(doubleDotLvl2+2)
-						let koef2 = 1
+						let anti_koef = 0
 						let arrVarLvl3 = []
 						if (i3+koef+1 < strArrAll.length) {
 							let strLineLvl3 = {}
@@ -170,6 +169,7 @@ function SlidesParser(SlidesStr) {
 								arrVarLvl3.push(strLineLvl3)
 								strLineLvl3 = {}
 								koef+=1
+								anti_koef-=1
 								if (i3+koef+1 < strArrAll.length) {
 									if (strArrAll[i3+koef+1][0] == 2) {
 									} else {
@@ -179,10 +179,12 @@ function SlidesParser(SlidesStr) {
 									break
 								}
 								if (i3+1 >= strArrAll.length) {
-								break}
+									break
+								}
 							}
 							if (arrVarLvl3.length > 0) {
-								strLineLvl2[strArrAll[i3+koef][1].slice(0, doubleDotLvl2)] = arrVarLvl3
+								strLineLvl2[strArrAll[i3+koef+anti_koef][1].slice(0, doubleDotLvl2)] = arrVarLvl3
+								anti_koef = 0
 							}
 						}
 						arrVarLvl2.push(strLineLvl2)
@@ -200,7 +202,9 @@ function SlidesParser(SlidesStr) {
 
 
 					}
-					strLine0[strArrAll[i3][1].slice(0, doubleDot)] = arrVarLvl2
+					if (arrVarLvl2.length > 0) {
+						strLine0[strArrAll[i3][1].slice(0, doubleDot)] = arrVarLvl2
+					}
 				}
 				SlideObj.push(strLine0)
 

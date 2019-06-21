@@ -2,7 +2,6 @@
 	see:
 		h1 text line: HTML & CSS
 		h3 text line: HTML
-		html line: <div onclick = "run(1)" class="text a pointer">Основы</div>
 		html line: <div onclick = "run(4)" class="text a pointer">Текст</div>
 		html line: <div onclick = "run(7)" class="text a pointer">Тегы</div>
 		html line: <div onclick = "run(9)" class="text a pointer">Ссылки</div>
@@ -31,11 +30,52 @@ slide:
 		text w-100: Нажмите "Файл" > "Сохранить как...", выберите папку, имя файла - "Hello world.html", нажмите "Сохранить", откройте файл в браузере.
 	copyCode: <html>\\n	<head>
 	voice: HTML_RU_Hello_World
-	time: 12000U_Hello_World
 	time: 6000
 slide:
 	see:
-		line h1 text: Тег + атрибут + текст = HTML
+		line h1 text: Теги
+		code:
+			line comment: // синтаксис
+			line tag: <имя тега>
+			line tag: <имя тега></имя тега>
+			line comment: // пример
+			line tag: <input>
+			line tag: <button>
+			line tag: <p></p>
+			line tag: <div></div>
+	voice: HTML_RU_tag_type
+	time: 6000
+slide:
+	see:
+		line h1 text: Атрибуты
+		code:
+			line comment: // синтаксис
+			line:
+				attribute_name: название
+			line:
+				attribute_name: название=
+				attribute_value: "значение"
+			line comment: // примеры
+			line:
+				attribute_name: checked
+			line:
+				attribute_name: class=
+				attribute_value: "navigation"
+			line:
+				attribute_name: id=
+				attribute_value: "footer"
+	voice: HTML_RU_tag_type
+	time: 6000
+slide:
+	see:
+		h1 text: Текст
+		line:
+			text float-left: Вся текстовая информация, отображаемая на сайте, размещается внутри тегов внутри тега <body></body>. По умолчанию переносы строк в коде неработают на сайте, пробелы больше 1 отображаются как 1. Используя элемент  <pre></pre>, содержимое отображается именно так, как оно указано в коде, с учётом всех пробелов, переносов.
+	voice: HTML_RU
+	time: 12000
+slide:
+	see:
+		line h1 text: Тег + атрибут + текст = элемент
 		line: 
 			html: <a class="button" href="http://">Open in CodePen</a>
 			html: <div class="button" onclick="copyCode()" >Copy code</div>
@@ -94,7 +134,7 @@ slide:
 	see:
 		h1 text: Текст
 		line:
-			text float-left: Вся текстовая информация, отображаемая на сайте, размещается внутри тегов внутри тега <body></body>. По умолчанию переносы строк в коде неработают на сайте, пробелы больше 1 отображаются как 1. Используя элемент  <pre></pre>, содержимое отображается именно так, как оно указано в коде, с учётом всех пробелов.
+			text: Вся текстовая информация, отображаемая на сайте, размещается внутри тегов внутри тега <body></body>. По умолчанию переносы строк в коде неработают на сайте, пробелы больше 1 отображаются как 1. Используя элемент  <pre></pre>, содержимое отображается именно так, как оно указано в коде, с учётом всех пробелов.
 		line h4 text: Теги для текста:
 		line:
 			text: Теги заголовков: 
@@ -113,23 +153,6 @@ slide:
 			tag:  <abbr>, <bdo>, <blockquote>, <q>, <cite>, <dfn>
 	voice: HTML_RU
 	time: 12000
-slide:
-	see:
-		line h1 text: Теги
-		code:
-			line:
-				tag: <div 
-				attribute_name: id=
-				attribute_value: "idName"
-				tag: >
-			line:
-				tag: 	<div>
-				text: Содержымое тега
-				tag: </div>
-			line:
-				tag: </div>
-	voice: HTML_RU_tag_type
-	time: 6000
 slide:
 	see:
 		line h3 text: Типы тегов
@@ -272,65 +295,6 @@ slide:
 	time: 6000
 slide:
 	see:
-		html line w-100: <a class="button" href="http://">Open in CodePen</a><div class="button" onclick="copyCode()" >Copy code</div>
-		col code w-100:
-			tag: <html>
-			tag: 	<head>
-			line:
-				tag: 		<title>
-				text: Практика
-				tag: </title>
-			tag: 	</head>
-			tag: 	<body>
-			tag: 		<nav>
-			line:
-				tag: 			<a 
-				attribute_name: href=
-				attribute_value: "#"
-				tag: >
-				text: Главна
-				tag: </a>
-			line:
-				tag: 			<a 
-				attribute_name: href=
-				attribute_value: "#"
-				tag: >
-				text: Продукты
-				tag: </a>
-			line:
-				tag: 			<a 
-				attribute_name: href=
-				attribute_value: "#"
-				tag: >
-				text: О нас
-				tag: </a>
-			tag: 		</nav>
-			tag: 		<hr>
-			line:
-				tag: 		<h1>
-				text: Ну очень простой сайт
-				tag: </h1>
-			line:
-				tag: 		<p>
-				text: Для более красивого дизайна нужно изучить CSS.
-				tag: </p>
-			line:
-				tag: 		<p>
-				text: Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.
-				tag: </p>
-			line:
-				tag: 		<a 
-				attribute_name: href=
-				attribute_value: "#"
-				tag: >
-				text: Ссылка на другую страницу
-				tag: </a>
-			tag: 	</body>
-			tag: </html>
-	voice: HTML_RU_Hello_World
-	time: 11000
-slide:
-	see:
 		h1 text line: Списки
 		 col code w-100:
 			line:
@@ -425,13 +389,74 @@ slide:
 	time: 12000
 slide:
 	see:
+		html line w-100: <a class="button" href="http://">Open in CodePen</a><div class="button" onclick="copyCode()" >Copy code</div>
+		col code w-100:
+			tag: <html>
+			tag: 	<head>
+			line:
+				tag: 		<title>
+				text: Практика
+				tag: </title>
+			tag: 	</head>
+			tag: 	<body>
+			tag: 		<nav>
+			line:
+				tag: 			<a 
+				attribute_name: href=
+				attribute_value: "#"
+				tag: >
+				text: Главна
+				tag: </a>
+			line:
+				tag: 			<a 
+				attribute_name: href=
+				attribute_value: "#"
+				tag: >
+				text: Продукты
+				tag: </a>
+			line:
+				tag: 			<a 
+				attribute_name: href=
+				attribute_value: "#"
+				tag: >
+				text: О нас
+				tag: </a>
+			tag: 		</nav>
+			tag: 		<hr>
+			line:
+				tag: 		<h1>
+				text: Ну очень простой сайт
+				tag: </h1>
+			line:
+				tag: 		<p>
+				text: Для более красивого дизайна нужно изучить CSS.
+				tag: </p>
+			line:
+				tag: 		<p>
+				text: Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты.
+				tag: </p>
+			line:
+				tag: 		<a 
+				attribute_name: href=
+				attribute_value: "#"
+				tag: >
+				text: Ссылка на другую страницу
+				tag: </a>
+			tag: 	</body>
+			tag: </html>
+	voice: HTML_RU_Hello_World
+	time: 11000
+slide:
+	see:
 		h1 text: Cовет.
 		line text: Для более быстрого написания кода используйте плагин "EMMET".
+		line text: На самом деле тегов и атрибутов больше, здесь росписаны самые используемые.
 	voice: HTML_RU_Hello_World
 	time: 6000
 slide:
 	see:
 		h1 text: Полезные ссылки.
+		line html: <a href="https://developer.mozilla.org/ru/docs/Learn/Getting_started_with_the_web/HTML_basics">"Mozilla Developer N web docs" - Веб документация</a>
 		line html: <a href="https://webref.ru/">"WebReference" - Справочник, практика, тесты.</a>
 		line html: <a href="https://html5book.ru/">"HTML5 BOOK" - Учебник</a>
 		line html: <a href="http://htmlbook.ru/">"HTML book" - Учебник</a>
@@ -443,6 +468,106 @@ slide:
 		line html: <a href="http://www.html.by/">"HTML" - Форум</a>
 	voice: HTML_RU_Hello_World
 	time: 6000
+slide:
+	see:
+		line h1 text: Ввод
+		code:
+			line:
+				tag: <input
+				attribute_name:  type=
+				attribute_value: "text"
+				attribute_name:  value=
+				attribute_value: "введите чтото"
+				attribute_name:  autofocus
+				attribute_name:  required
+				tag: >
+		line:
+			attribute_name: type=
+			attribute_value: "text"
+			text:  Текстовое поле. Предназначено для ввода символов с помощью клавиатуры.
+		line:
+			attribute_name: value=
+			attribute_value: "введите чтото"
+			text:  Предварительно введённая строка.
+		line:
+			attribute_name: autofocus
+			text:  Устанавливает фокус в поле формы.
+		line:
+			attribute_name: required
+			text:  Обязательное для заполнения поле.
+		code:
+			line:
+				tag: <input
+				attribute_name:  type=
+				attribute_value: "button"
+				attribute_name:  value=
+				attribute_value: "Кнопка"
+				tag: >
+		line:
+			attribute_name: type=
+			attribute_value: "button"
+			text:  Кнопка.
+		line:
+			attribute_name: value=
+			attribute_value: "Кнопка"
+			text:  Текстоваю надпись.
+		code:
+			line:
+				comment: 1.
+				tag:  <label
+				attribute_name:  for=
+				attribute_value: "id_group_yes"
+				tag: >
+				text:  Да.
+				tag: </label>
+			line:
+				tag: <input
+				attribute_name:  type=
+				attribute_value: "radio"
+				attribute_name:  name=
+				attribute_value: "group1"
+				attribute_name:  id=
+				attribute_value: "group1_yes"
+				attribute_name:  value=
+				attribute_value: "yes"
+				attribute_name:  checked
+				tag: >
+			line:
+				comment: 2.
+				tag:  <label>
+				text:  Нет.
+			line:
+				tag: 	<input
+				attribute_name:  type=
+				attribute_value: "radio"
+				attribute_name:  name=
+				attribute_value: "group1"
+				attribute_name:  value=
+				attribute_value: "no"
+				tag: >
+			line:
+				tag: </label>
+		line:
+			attribute_name: type=
+			attribute_value: "radio"
+			text:  Переключатели. Используются, когда следует выбрать один вариант из нескольких предложенных.
+		line:
+			attribute_name: name=
+			attribute_value: "group1"
+			text:  Обединяет переключатели в одну групу.
+		line:
+			attribute_name: value=
+			attribute_value: "yes"
+			text:  Ето значения у выбраного переключателя будет одправленно на сервер.
+		line:
+			tag: <label></label>
+			text:  Связывает содержымое с "input". То есть клик по содержымому щитаеться как клик по "input".
+		line:
+			attribute_name: for=
+			attribute_value: "group1_yes"
+			text:  Указывает на "input" c "id=group1_yes" для связи. В другом примере нету "for", "id" так как "input" внутри "label".
+	voice: HTML_RU_tag_type
+	time: 8000
 slide:
 	see:
 		col:
